@@ -1,0 +1,35 @@
+extends ../master.pug
+
+block body
+    .level.level--2
+        h2 Nivå 2
+        .level__description
+            p Det var en stor bild! Kanske en lite mindre?
+        
+            h3 Assets
+            pre.level__assets
+                | large.jpg
+                br
+                | small.jpg
+
+            h3 Tip
+            .level__tip 
+                .inner Replace the large image with the small
+    
+        h3 Code!
+        .level__solve
+            input.level__editor(type="text" value="<img src=\"large.jpg\">" data-start-value="<img src=\"large.jpg\">")
+            button.level__compile Spara
+
+        .level__solution--correct.alert.hidden
+            .inner
+                h2 Bra!
+                p Du har hjälpt SmåFot att lägga till en stor bild på sin sajt.
+                a.button(href="/level/2") Fortsätt
+
+        .level__solution--wrong.alert.hidden
+            .inner
+                h2 Fel!
+                button.js-reset-level Testa igen
+        
+        iframe#render.hidden

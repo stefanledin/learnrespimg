@@ -1,0 +1,81 @@
+@import "~normalize-scss/sass/normalize";
+@import "~susy/sass/susy";
+
+@include normalize();
+
+/**
+ * Colors
+ */
+$grey: #E7EED2;
+$dark-green: #466551;
+$green: #368C72;
+$light-green: #7ECBA1;
+
+
+body {
+    background: $grey;
+    font-family: sans-serif;
+    color: $dark-green;
+}
+
+.page {
+    margin: 0 auto;
+    overflow: hidden;
+    max-width: 800px;
+}
+
+.level {}
+.level__description {
+    width: susy-span(6 of 12);
+    line-height: 1.2;
+}
+.level__assets {
+    padding: 10px;
+    background: $green;
+    color: white;
+}
+
+.level__tip {
+    background: $light-green;
+    color: $dark-green;
+}
+
+.level__solve {
+    margin-top: 10px;
+}
+
+.level__editor {
+    padding: 8px;
+    width: 100%;
+    font-family: monospace;
+    font-size: 16px;
+    border: none;
+}
+
+.level__compile {}
+
+/**
+ * Helpers
+ */
+.hidden {
+    display: none;
+}
+
+.inner {
+    padding: 10px;
+}
+
+button, .button {
+    padding: 10px;
+    background: $dark-green;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.alert {
+    border: 1px solid $light-green;
+    overflow: hidden;
+}
