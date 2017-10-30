@@ -344,7 +344,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__scss_app_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__scss_app_scss__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__level_1__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__level_2__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vue_dist_vue_esm_js__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vue_dist_vue_esm__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_level_vue__ = __webpack_require__(10);
 
 
 
@@ -352,13 +353,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 
-__WEBPACK_IMPORTED_MODULE_3_vue_dist_vue_esm_js__["a" /* default */].component('plask', __webpack_require__(10));
-/*Vue.component('plask', {
-    template: '<h2>Plask</h2>'
-});*/
 
-new __WEBPACK_IMPORTED_MODULE_3_vue_dist_vue_esm_js__["a" /* default */]({
-    el: '.page'
+new __WEBPACK_IMPORTED_MODULE_3_vue_dist_vue_esm__["a" /* default */]({
+    el: '.page',
+    components: {
+        level: __WEBPACK_IMPORTED_MODULE_4__components_level_vue__["a" /* default */]
+    }
 });
 
 
@@ -11238,9 +11238,8 @@ exports.clearImmediate = clearImmediate;
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__node_modules_vue_loader_lib_selector_type_script_index_0_bustCache_plask_vue__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_0bcb25e4_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_template_compiler_preprocessor_engine_pug_node_modules_vue_loader_lib_selector_type_template_index_0_bustCache_plask_vue__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__node_modules_vue_loader_lib_selector_type_script_index_0_bustCache_level_vue__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_10ed9215_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_template_compiler_preprocessor_engine_pug_node_modules_vue_loader_lib_selector_type_template_index_0_bustCache_level_vue__ = __webpack_require__(13);
 var disposed = false
 var normalizeComponent = __webpack_require__(11)
 /* script */
@@ -11256,14 +11255,14 @@ var __vue_scopeId__ = null
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
-  __WEBPACK_IMPORTED_MODULE_0__node_modules_vue_loader_lib_selector_type_script_index_0_bustCache_plask_vue__["a" /* default */],
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_0bcb25e4_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_template_compiler_preprocessor_engine_pug_node_modules_vue_loader_lib_selector_type_template_index_0_bustCache_plask_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_0__node_modules_vue_loader_lib_selector_type_script_index_0_bustCache_level_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_10ed9215_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_template_compiler_preprocessor_engine_pug_node_modules_vue_loader_lib_selector_type_template_index_0_bustCache_level_vue__["a" /* default */],
   __vue_template_functional__,
   __vue_styles__,
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/js/components/plask.vue"
+Component.options.__file = "resources/js/components/level.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {  return key !== "default" && key.substr(0, 2) !== "__"})) {  console.error("named exports are not supported in *.vue files.")}
 
 /* hot reload */
@@ -11273,16 +11272,16 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-0bcb25e4", Component.options)
+    hotAPI.createRecord("data-v-10ed9215", Component.options)
   } else {
-    hotAPI.reload("data-v-0bcb25e4", Component.options)
+    hotAPI.reload("data-v-10ed9215", Component.options)
 ' + '  }
   module.hot.dispose(function (data) {
     disposed = true
   })
 })()}
 
-/* harmony default export */ __webpack_exports__["default"] = (Component.exports);
+/* harmony default export */ __webpack_exports__["a"] = (Component.exports);
 
 
 /***/ }),
@@ -11403,11 +11402,56 @@ module.exports = function normalizeComponent (
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["a"] = ({
-    mounted() {
-        console.log('plask mounted');
+
+    data() {
+        return {
+            completed: false,
+            level: 'Nivå 1',
+            description: 'SmåFot vill ha en stor bild i sidhuvudet från förra årets kalas. Den ska få kompisarna att minnas hur roligt det var då och bli peppade på nytt! SmåFot designar en modern och sajt som ser riktigt bra ut på breda skärmar. (Flera av hans Bigfoot-kompisar är gamers och har ultrabreda skärmar.)',
+            todo: 'Add a src attribute',
+            assets: ['small.jpg', 'large.jpg'],
+            starterMarkup: '<img>'
+        }
+    },
+
+    methods: {
+        checkMarkup(event) {
+
+        }
     }
+
 });
 
 
@@ -11420,16 +11464,106 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("Plask")
+  return _c("div", { staticClass: "level level--1" }, [
+    _c("h2", [_vm._v(_vm._s(_vm.level))]),
+    _c("div", { staticClass: "level__description" }, [
+      _vm._v(_vm._s(_vm.description)),
+      _c("h3", [_vm._v("Assets")]),
+      _c("pre", { staticClass: "level__assets" }, [
+        _c(
+          "ul",
+          _vm._l(_vm.assets, function(asset) {
+            return _c("li", [_vm._v(_vm._s(asset))])
+          })
+        )
+      ]),
+      _c("h3", [_vm._v("Todo")]),
+      _c("div", { staticClass: "level__tip" }, [
+        _c("div", { staticClass: "inner" }, [_vm._v(_vm._s(_vm.todo))])
+      ])
+    ]),
+    _c("h2", [_vm._v("Code!")]),
+    _c("div", { staticClass: "level__solve" }, [
+      _c("input", {
+        directives: [
+          {
+            name: "model",
+            rawName: "v-model",
+            value: _vm.code,
+            expression: "code"
+          }
+        ],
+        staticClass: "level__editor",
+        attrs: { type: "text" },
+        domProps: { value: _vm.starterMarkup, value: _vm.code },
+        on: {
+          input: function($event) {
+            if ($event.target.composing) {
+              return
+            }
+            _vm.code = $event.target.value
+          }
+        }
+      }),
+      _c(
+        "button",
+        { staticClass: "level__compile", on: { click: _vm.checkMarkup } },
+        [_vm._v("Spara")]
+      )
+    ]),
+    _vm._m(0),
+    _vm._m(1),
+    _c("iframe", { staticClass: "hidden", attrs: { id: "render" } })
+  ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "level__solution level__solution--correct alert hidden" },
+      [
+        _c("div", { staticClass: "inner" }, [
+          _c("h2", [_vm._v("Bra")]),
+          _c("p", [
+            _vm._v(
+              "Du har hjälpt SmåFot att lägga till en stor bild på sin sajt."
+            )
+          ]),
+          _c("a", { staticClass: "button", attrs: { href: "/level/2" } }, [
+            _vm._v("Nästa uppgift")
+          ])
+        ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "level__solution level__solution--wrong alert hidden" },
+      [
+        _c("div", { staticClass: "inner" }, [
+          _c("h2", [_vm._v("Fel")]),
+          _c("button", { staticClass: "js-reset-level" }, [
+            _vm._v("Testa igen")
+          ])
+        ])
+      ]
+    )
+  }
+]
 render._withStripped = true
 var esExports = { render: render, staticRenderFns: staticRenderFns }
 /* harmony default export */ __webpack_exports__["a"] = (esExports);
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-0bcb25e4", esExports)
+    require("vue-hot-reload-api")      .rerender("data-v-10ed9215", esExports)
   }
 }
 

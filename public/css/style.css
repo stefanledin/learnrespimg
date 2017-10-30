@@ -413,6 +413,7 @@ body {
 .page {
   margin: 0 auto;
   overflow: hidden;
+  width: 95%;
   max-width: 800px; }
 
 .level__description {

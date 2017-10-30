@@ -12,7 +12,8 @@ app.get('/', function (req, res) {
 })
 
 app.get('/level/:level', (req, res) => {
-    res.render(`levels/level-${req.params.level}`);
+    res.render('level');
+    //res.render(`levels/level-${req.params.level}`);
 })
 
 app.use(function (req, res, next) {
