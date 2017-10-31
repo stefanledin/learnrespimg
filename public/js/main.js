@@ -64,60 +64,7 @@
 /******/ })
 /************************************************************************/
 /******/ ([
-/* 0 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-class Game {
-    
-    constructor() {
-        this.editor = document.querySelector('input.level__editor');
-        this.button = document.querySelector('button.level__compile');
-        this.render = document.querySelector('iframe#render');
-        this.correct = document.querySelector('.level__solution--correct');
-        this.wrong = document.querySelector('.level__solution--wrong');
-        this.bindEvents();
-    }
-
-    bindEvents() {
-        this.button.addEventListener('click', this.answerQuestion.bind(this));
-    }
-
-    answerQuestion(event) {
-        event.preventDefault();
-        this.addMarkup();
-        if (this.checkMarkup()) {
-            this.correctAnswer();
-        } else {
-            this.wrongAnswer();
-        }
-    }
-
-    addMarkup() {
-        this.render.contentDocument.documentElement.innerHTML = this.editor.value;
-    }
-
-    correctAnswer() {
-        this.correct.classList.remove('hidden');
-    }
-
-    wrongAnswer() {
-        this.wrong.classList.remove('hidden');
-        this.wrong.querySelector('button').addEventListener('click', this.resetLevel.bind(this));
-    }
-
-    resetLevel(event) {
-        event.preventDefault();
-        this.wrong.classList.add('hidden');
-        this.editor.value = this.editor.getAttribute('data-start-value');
-        this.render.contentDocument.innerHTML = '';
-    }
-
-}
-
-/* harmony default export */ __webpack_exports__["a"] = (Game);
-
-/***/ }),
+/* 0 */,
 /* 1 */
 /***/ (function(module, exports) {
 
@@ -342,22 +289,17 @@ module.exports = g;
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__scss_app_scss__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__scss_app_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__scss_app_scss__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__level_1__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__level_2__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vue_dist_vue_esm__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_level_vue__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_dist_vue_esm__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_level_vue__ = __webpack_require__(10);
 
 
 
 
 
-
-
-
-new __WEBPACK_IMPORTED_MODULE_3_vue_dist_vue_esm__["a" /* default */]({
+new __WEBPACK_IMPORTED_MODULE_1_vue_dist_vue_esm__["a" /* default */]({
     el: '.page',
     components: {
-        level: __WEBPACK_IMPORTED_MODULE_4__components_level_vue__["a" /* default */]
+        level: __WEBPACK_IMPORTED_MODULE_2__components_level_vue__["a" /* default */]
     }
 });
 
@@ -369,52 +311,8 @@ new __WEBPACK_IMPORTED_MODULE_3_vue_dist_vue_esm__["a" /* default */]({
 // removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 5 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__game__ = __webpack_require__(0);
-
-
-class Level_1 extends __WEBPACK_IMPORTED_MODULE_0__game__["a" /* default */] {
-    
-    checkMarkup() {
-        const img = this.render.contentDocument.querySelector('img');
-        if (img) {
-            const src = img.getAttribute('src');
-            if (src && src === 'large.jpg') return true;
-        }
-        return false;
-    }
-
-}
-
-/* unused harmony default export */ var _unused_webpack_default_export = (Level_1);
-
-/***/ }),
-/* 6 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__game__ = __webpack_require__(0);
-
-
-class Level_2 extends __WEBPACK_IMPORTED_MODULE_0__game__["a" /* default */] {
-    
-    checkMarkup() {
-        const img = this.render.contentDocument.querySelector('img');
-        if (img) {
-            const src = img.getAttribute('src');
-            if (src && src === 'small.jpg') return true;
-        }
-        return false;
-    }
-
-}
-
-/* unused harmony default export */ var _unused_webpack_default_export = (Level_2);
-
-/***/ }),
+/* 5 */,
+/* 6 */,
 /* 7 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -11398,6 +11296,7 @@ module.exports = function normalizeComponent (
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__game__ = __webpack_require__(15);
 //
 //
 //
@@ -11432,24 +11331,28 @@ module.exports = function normalizeComponent (
 //
 //
 //
+//
+//
+
+
 
 /* harmony default export */ __webpack_exports__["a"] = ({
 
-    data() {
-        return {
-            completed: false,
-            level: 'Nivå 1',
-            description: 'SmåFot vill ha en stor bild i sidhuvudet från förra årets kalas. Den ska få kompisarna att minnas hur roligt det var då och bli peppade på nytt! SmåFot designar en modern och sajt som ser riktigt bra ut på breda skärmar. (Flera av hans Bigfoot-kompisar är gamers och har ultrabreda skärmar.)',
-            todo: 'Add a src attribute',
-            assets: ['small.jpg', 'large.jpg'],
-            starterMarkup: '<img>'
-        }
-    },
+    mixins: [__WEBPACK_IMPORTED_MODULE_0__game__["a" /* default */]],
 
     methods: {
-        checkMarkup(event) {
 
+        checkIfAnswerIsCorrect() {
+            const img = this.render.contentDocument.querySelector('img');
+            if (img) {
+                const src = img.getAttribute('src');
+                if (src && src === 'large.jpg') {
+                    return true;
+                }
+            }
+            return false;
         }
+
     }
 
 });
@@ -11468,6 +11371,10 @@ var render = function() {
     _c("h2", [_vm._v(_vm._s(_vm.level))]),
     _c("div", { staticClass: "level__description" }, [
       _vm._v(_vm._s(_vm.description)),
+      _c("h3", [_vm._v("Todo")]),
+      _c("div", { staticClass: "level__tip" }, [
+        _c("div", { staticClass: "inner" }, [_vm._v(_vm._s(_vm.todo))])
+      ]),
       _c("h3", [_vm._v("Assets")]),
       _c("pre", { staticClass: "level__assets" }, [
         _c(
@@ -11476,10 +11383,6 @@ var render = function() {
             return _c("li", [_vm._v(_vm._s(asset))])
           })
         )
-      ]),
-      _c("h3", [_vm._v("Todo")]),
-      _c("div", { staticClass: "level__tip" }, [
-        _c("div", { staticClass: "inner" }, [_vm._v(_vm._s(_vm.todo))])
       ])
     ]),
     _c("h2", [_vm._v("Code!")]),
@@ -11489,19 +11392,19 @@ var render = function() {
           {
             name: "model",
             rawName: "v-model",
-            value: _vm.code,
-            expression: "code"
+            value: _vm.markup,
+            expression: "markup"
           }
         ],
         staticClass: "level__editor",
         attrs: { type: "text" },
-        domProps: { value: _vm.starterMarkup, value: _vm.code },
+        domProps: { value: _vm.markup },
         on: {
           input: function($event) {
             if ($event.target.composing) {
               return
             }
-            _vm.code = $event.target.value
+            _vm.markup = $event.target.value
           }
         }
       }),
@@ -11511,8 +11414,41 @@ var render = function() {
         [_vm._v("Spara")]
       )
     ]),
-    _vm._m(0),
-    _vm._m(1),
+    _c(
+      "div",
+      {
+        directives: [
+          {
+            name: "show",
+            rawName: "v-show",
+            value: _vm.correctAnswer,
+            expression: "correctAnswer"
+          }
+        ],
+        staticClass: "level__solution level__solution--correct alert"
+      },
+      [_vm._m(0)]
+    ),
+    _c(
+      "div",
+      {
+        directives: [
+          {
+            name: "show",
+            rawName: "v-show",
+            value: _vm.wrongAnswer,
+            expression: "wrongAnswer"
+          }
+        ],
+        staticClass: "level__solution level__solution--wrong alert"
+      },
+      [
+        _c("div", { staticClass: "inner" }, [
+          _c("h2", [_vm._v("Fel")]),
+          _c("button", { on: { click: _vm.tryAgain } }, [_vm._v("Testa igen")])
+        ])
+      ]
+    ),
     _c("iframe", { staticClass: "hidden", attrs: { id: "render" } })
   ])
 }
@@ -11521,40 +11457,15 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      { staticClass: "level__solution level__solution--correct alert hidden" },
-      [
-        _c("div", { staticClass: "inner" }, [
-          _c("h2", [_vm._v("Bra")]),
-          _c("p", [
-            _vm._v(
-              "Du har hjälpt SmåFot att lägga till en stor bild på sin sajt."
-            )
-          ]),
-          _c("a", { staticClass: "button", attrs: { href: "/level/2" } }, [
-            _vm._v("Nästa uppgift")
-          ])
-        ])
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      { staticClass: "level__solution level__solution--wrong alert hidden" },
-      [
-        _c("div", { staticClass: "inner" }, [
-          _c("h2", [_vm._v("Fel")]),
-          _c("button", { staticClass: "js-reset-level" }, [
-            _vm._v("Testa igen")
-          ])
-        ])
-      ]
-    )
+    return _c("div", { staticClass: "inner" }, [
+      _c("h2", [_vm._v("Bra")]),
+      _c("p", [
+        _vm._v("Du har hjälpt SmåFot att lägga till en stor bild på sin sajt.")
+      ]),
+      _c("a", { staticClass: "button", attrs: { href: "/level/2" } }, [
+        _vm._v("Nästa uppgift")
+      ])
+    ])
   }
 ]
 render._withStripped = true
@@ -11566,6 +11477,46 @@ if (false) {
     require("vue-hot-reload-api")      .rerender("data-v-10ed9215", esExports)
   }
 }
+
+/***/ }),
+/* 14 */,
+/* 15 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony default export */ __webpack_exports__["a"] = ({
+
+    mounted() {
+        this.render = document.querySelector('#render');
+    },
+
+    data() {
+        return {
+            correctAnswer: false,
+            wrongAnswer: false,
+            level: 'Nivå 1',
+            description: 'SmåFot vill ha en stor bild i sidhuvudet från förra årets kalas. Den ska få kompisarna att minnas hur roligt det var då och bli peppade på nytt! SmåFot designar en modern och sajt som ser riktigt bra ut på breda skärmar. (Flera av hans Bigfoot-kompisar är gamers och har ultrabreda skärmar.)',
+            todo: 'Add a src attribute',
+            assets: ['small.jpg', 'large.jpg'],
+            markup: '<img>',
+            starterMarkup: '<img>'
+        }
+    },
+
+    methods: {
+        checkMarkup(event) {
+            this.render.contentDocument.documentElement.innerHTML = this.markup;
+            this.correctAnswer = this.checkIfAnswerIsCorrect();
+            this.wrongAnswer = ! this.correctAnswer;
+        },
+
+        tryAgain() {
+            this.markup = this.starterMarkup;
+            this.correctAnswer = false;
+            this.wrongAnswer = false;
+        }
+    }
+});
 
 /***/ })
 /******/ ]);

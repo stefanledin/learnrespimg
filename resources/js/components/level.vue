@@ -3,53 +3,57 @@
         h2 {{ level }}
         .level__description
             | {{ description }}
+            
+            h3 Todo
+            .level__tip
+                .inner
+                    | {{ todo }}
+            
             h3 Assets
             pre.level__assets
                 ul
                     li(v-for="asset in assets") {{ asset }}
 
-            h3 Todo
-            .level__tip
-                .inner
-                    | {{ todo }}
 
         h2 Code!
         .level__solve
-            input.level__editor(type="text" :value="starterMarkup" v-model="code")
+            input.level__editor(type="text" v-model="markup")
             button.level__compile(v-on:click="checkMarkup") Spara
 
-        .level__solution.level__solution--correct.alert.hidden
+        .level__solution.level__solution--correct.alert(v-show="correctAnswer")
             .inner
                 h2 Bra
                 p Du har hjälpt SmåFot att lägga till en stor bild på sin sajt.
                 a.button(href="/level/2") Nästa uppgift
 
-        .level__solution.level__solution--wrong.alert.hidden
+        .level__solution.level__solution--wrong.alert(v-show="wrongAnswer")
             .inner
                 h2 Fel
-                button.js-reset-level Testa igen
+                button(v-on:click="tryAgain") Testa igen
 
         iframe#render.hidden
 </template>
 
 <script>
+    import Game from './_game';
+
     export default {
 
-        data() {
-            return {
-                completed: false,
-                level: 'Nivå 1',
-                description: 'SmåFot vill ha en stor bild i sidhuvudet från förra årets kalas. Den ska få kompisarna att minnas hur roligt det var då och bli peppade på nytt! SmåFot designar en modern och sajt som ser riktigt bra ut på breda skärmar. (Flera av hans Bigfoot-kompisar är gamers och har ultrabreda skärmar.)',
-                todo: 'Add a src attribute',
-                assets: ['small.jpg', 'large.jpg'],
-                starterMarkup: '<img>'
-            }
-        },
+        mixins: [Game],
 
         methods: {
-            checkMarkup(event) {
 
+            checkIfAnswerIsCorrect() {
+                const img = this.render.contentDocument.querySelector('img');
+                if (img) {
+                    const src = img.getAttribute('src');
+                    if (src && src === 'large.jpg') {
+                        return true;
+                    }
+                }
+                return false;
             }
+
         }
 
     }
