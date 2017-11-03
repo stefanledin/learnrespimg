@@ -1,6 +1,7 @@
 <template lang="pug">
-    .level.level--1
-        h2 {{ level }}
+    .level
+        h1 {{ plask }}
+        h2 Nivå {{ level }}
         .level__description
             | {{ description }}
             
@@ -35,25 +36,39 @@
 </template>
 
 <script>
-    import Game from './_game';
+    import Level from '../levels/level-1';
 
     export default {
 
-        mixins: [Game],
+        mixins: [Level],
+
+        props: ['levelData'],
+
+        mounted() {
+            this.render = document.querySelector('#render');
+        },
+
+        data() {
+            const defaultLevelData = {
+                correctAnswer: false,
+                wrongAnswer: false
+            };
+            const levelData = JSON.parse(this.levelData);
+            return Object.assign(defaultLevelData, levelData);
+        },
 
         methods: {
+            checkMarkup(event) {
+                this.render.contentDocument.documentElement.innerHTML = this.markup;
+                this.correctAnswer = this.checkIfAnswerIsCorrect();
+                this.wrongAnswer = ! this.correctAnswer;
+            },
 
-            checkIfAnswerIsCorrect() {
-                const img = this.render.contentDocument.querySelector('img');
-                if (img) {
-                    const src = img.getAttribute('src');
-                    if (src && src === 'large.jpg') {
-                        return true;
-                    }
-                }
-                return false;
+            tryAgain() {
+                this.markup = this.starterMarkup;
+                this.correctAnswer = false;
+                this.wrongAnswer = false;
             }
-
         }
 
     }

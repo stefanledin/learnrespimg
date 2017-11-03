@@ -1,4 +1,5 @@
 const path = require('path');
+const fs = require('fs');
 const express = require('express')
 const app = express()
 
@@ -12,8 +13,14 @@ app.get('/', function (req, res) {
 })
 
 app.get('/level/:level', (req, res) => {
-    res.render('level');
-    //res.render(`levels/level-${req.params.level}`);
+    const fileName = `./resources/leveldata/level-${req.params.level}.json`;
+    const levelData = JSON.parse(fs.readFileSync(fileName, 'utf8'));
+    if (!levelData) {
+        res.send('plask');
+    }
+    res.render('level', {
+        levelData
+    });
 })
 
 app.use(function (req, res, next) {

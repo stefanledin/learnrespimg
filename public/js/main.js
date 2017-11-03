@@ -60,12 +60,11 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 2);
 /******/ })
 /************************************************************************/
 /******/ ([
-/* 0 */,
-/* 1 */
+/* 0 */
 /***/ (function(module, exports) {
 
 // shim for using process in browser
@@ -255,7 +254,7 @@ process.umask = function() { return 0; };
 
 
 /***/ }),
-/* 2 */
+/* 1 */
 /***/ (function(module, exports) {
 
 var g;
@@ -282,15 +281,15 @@ module.exports = g;
 
 
 /***/ }),
-/* 3 */
+/* 2 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__scss_app_scss__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__scss_app_scss__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__scss_app_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__scss_app_scss__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_dist_vue_esm__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_level_vue__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_dist_vue_esm__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_level_vue__ = __webpack_require__(7);
 
 
 
@@ -305,15 +304,13 @@ new __WEBPACK_IMPORTED_MODULE_1_vue_dist_vue_esm__["a" /* default */]({
 
 
 /***/ }),
-/* 4 */
+/* 3 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 5 */,
-/* 6 */,
-/* 7 */
+/* 4 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -10877,10 +10874,10 @@ Vue$3.compile = compileToFunctions;
 
 /* harmony default export */ __webpack_exports__["a"] = (Vue$3);
 
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(1), __webpack_require__(2), __webpack_require__(8).setImmediate))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(0), __webpack_require__(1), __webpack_require__(5).setImmediate))
 
 /***/ }),
-/* 8 */
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var apply = Function.prototype.apply;
@@ -10933,13 +10930,13 @@ exports._unrefActive = exports.active = function(item) {
 };
 
 // setimmediate attaches itself to the global object
-__webpack_require__(9);
+__webpack_require__(6);
 exports.setImmediate = setImmediate;
 exports.clearImmediate = clearImmediate;
 
 
 /***/ }),
-/* 9 */
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, process) {(function (global, undefined) {
@@ -11129,17 +11126,17 @@ exports.clearImmediate = clearImmediate;
     attachTo.clearImmediate = clearImmediate;
 }(typeof self === "undefined" ? typeof global === "undefined" ? this : global : self));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(1)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1), __webpack_require__(0)))
 
 /***/ }),
-/* 10 */
+/* 7 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__node_modules_vue_loader_lib_selector_type_script_index_0_bustCache_level_vue__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_10ed9215_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_template_compiler_preprocessor_engine_pug_node_modules_vue_loader_lib_selector_type_template_index_0_bustCache_level_vue__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__node_modules_vue_loader_lib_selector_type_script_index_0_bustCache_level_vue__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_10ed9215_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_template_compiler_preprocessor_engine_pug_node_modules_vue_loader_lib_selector_type_template_index_0_bustCache_level_vue__ = __webpack_require__(11);
 var disposed = false
-var normalizeComponent = __webpack_require__(11)
+var normalizeComponent = __webpack_require__(8)
 /* script */
 
 /* template */
@@ -11183,7 +11180,7 @@ if (false) {(function () {
 
 
 /***/ }),
-/* 11 */
+/* 8 */
 /***/ (function(module, exports) {
 
 /* globals __VUE_SSR_CONTEXT__ */
@@ -11292,11 +11289,12 @@ module.exports = function normalizeComponent (
 
 
 /***/ }),
-/* 12 */
+/* 9 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__game__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__levels_level_1__ = __webpack_require__(13);
+//
 //
 //
 //
@@ -11338,28 +11336,43 @@ module.exports = function normalizeComponent (
 
 /* harmony default export */ __webpack_exports__["a"] = ({
 
-    mixins: [__WEBPACK_IMPORTED_MODULE_0__game__["a" /* default */]],
+    mixins: [__WEBPACK_IMPORTED_MODULE_0__levels_level_1__["a" /* default */]],
+
+    props: ['levelData'],
+
+    mounted() {
+        this.render = document.querySelector('#render');
+    },
+
+    data() {
+        const defaultLevelData = {
+            correctAnswer: false,
+            wrongAnswer: false
+        };
+        const levelData = JSON.parse(this.levelData);
+        return Object.assign(defaultLevelData, levelData);
+    },
 
     methods: {
+        checkMarkup(event) {
+            this.render.contentDocument.documentElement.innerHTML = this.markup;
+            this.correctAnswer = this.checkIfAnswerIsCorrect();
+            this.wrongAnswer = ! this.correctAnswer;
+        },
 
-        checkIfAnswerIsCorrect() {
-            const img = this.render.contentDocument.querySelector('img');
-            if (img) {
-                const src = img.getAttribute('src');
-                if (src && src === 'large.jpg') {
-                    return true;
-                }
-            }
-            return false;
+        tryAgain() {
+            this.markup = this.starterMarkup;
+            this.correctAnswer = false;
+            this.wrongAnswer = false;
         }
-
     }
 
 });
 
 
 /***/ }),
-/* 13 */
+/* 10 */,
+/* 11 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -11367,8 +11380,9 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "level level--1" }, [
-    _c("h2", [_vm._v(_vm._s(_vm.level))]),
+  return _c("div", { staticClass: "level" }, [
+    _c("h1", [_vm._v(_vm._s(_vm.plask))]),
+    _c("h2", [_vm._v("Nivå " + _vm._s(_vm.level))]),
     _c("div", { staticClass: "level__description" }, [
       _vm._v(_vm._s(_vm.description)),
       _c("h3", [_vm._v("Todo")]),
@@ -11479,42 +11493,29 @@ if (false) {
 }
 
 /***/ }),
-/* 14 */,
-/* 15 */
+/* 12 */,
+/* 13 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony default export */ __webpack_exports__["a"] = ({
-
-    mounted() {
-        this.render = document.querySelector('#render');
-    },
-
     data() {
-        return {
-            correctAnswer: false,
-            wrongAnswer: false,
-            level: 'Nivå 1',
-            description: 'SmåFot vill ha en stor bild i sidhuvudet från förra årets kalas. Den ska få kompisarna att minnas hur roligt det var då och bli peppade på nytt! SmåFot designar en modern och sajt som ser riktigt bra ut på breda skärmar. (Flera av hans Bigfoot-kompisar är gamers och har ultrabreda skärmar.)',
-            todo: 'Add a src attribute',
-            assets: ['small.jpg', 'large.jpg'],
-            markup: '<img>',
-            starterMarkup: '<img>'
-        }
+        return {plask: 'heej heej'};
     },
 
     methods: {
-        checkMarkup(event) {
-            this.render.contentDocument.documentElement.innerHTML = this.markup;
-            this.correctAnswer = this.checkIfAnswerIsCorrect();
-            this.wrongAnswer = ! this.correctAnswer;
-        },
 
-        tryAgain() {
-            this.markup = this.starterMarkup;
-            this.correctAnswer = false;
-            this.wrongAnswer = false;
+        checkIfAnswerIsCorrect() {
+            const img = this.render.contentDocument.querySelector('img');
+            if (img) {
+                const src = img.getAttribute('src');
+                if (src && src === 'large.jpg') {
+                    return true;
+                }
+            }
+            return false;
         }
+
     }
 });
 
