@@ -1,6 +1,5 @@
 <template lang="pug">
     .level
-        h1 {{ plask }}
         h2 Nivå {{ level }}
         .level__description
             | {{ description }}
@@ -42,7 +41,7 @@
 
         mixins: [Level],
 
-        props: ['levelData'],
+        props: ['number'],
 
         mounted() {
             this.render = document.querySelector('#render');
@@ -53,8 +52,7 @@
                 correctAnswer: false,
                 wrongAnswer: false
             };
-            const levelData = JSON.parse(this.levelData);
-            return Object.assign(defaultLevelData, levelData);
+            return defaultLevelData;
         },
 
         methods: {

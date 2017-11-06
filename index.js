@@ -13,13 +13,9 @@ app.get('/', function (req, res) {
 })
 
 app.get('/level/:level', (req, res) => {
-    const fileName = `./resources/leveldata/level-${req.params.level}.json`;
-    const levelData = JSON.parse(fs.readFileSync(fileName, 'utf8'));
-    if (!levelData) {
-        res.send('plask');
-    }
     res.render('level', {
-        levelData
+        title: 'Nivå ' + req.params.level,
+        number: req.params.level
     });
 })
 
