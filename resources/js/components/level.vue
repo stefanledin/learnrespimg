@@ -36,6 +36,8 @@
 
 <script>
     import Level from '../levels/level-1';
+    const plask = require('../levels/test.js');
+    console.log(plask);
 
     export default {
 
@@ -45,6 +47,7 @@
 
         mounted() {
             this.render = document.querySelector('#render');
+            console.log(this);
         },
 
         data() {
