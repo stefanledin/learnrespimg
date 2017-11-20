@@ -11,11 +11,18 @@ $dark-green: #466551;
 $green: #368C72;
 $light-green: #7ECBA1;
 
-
+/**
+ * Globals
+ */
 body {
     background: $grey;
     font-family: sans-serif;
     color: $dark-green;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
 }
 
 .page {
@@ -58,6 +65,10 @@ body {
 /**
  * Helpers
  */
+.center {
+    text-align: center;
+}
+
 .hidden {
     display: none;
 }

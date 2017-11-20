@@ -405,10 +405,17 @@ template {
 /**
  * Colors
  */
+/**
+ * Globals
+ */
 body {
   background: #E7EED2;
   font-family: sans-serif;
   color: #466551; }
+
+img {
+  max-width: 100%;
+  height: auto; }
 
 .page {
   margin: 0 auto;
@@ -442,6 +449,9 @@ body {
 /**
  * Helpers
  */
+.center {
+  text-align: center; }
+
 .hidden {
   display: none; }
 

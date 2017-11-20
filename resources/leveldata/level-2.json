@@ -1,0 +1,11 @@
+{
+    "level": "2",
+    "description": "Den stora bilden var seg att ladda på mobiler, byt till den lilla istället!",
+    "todo": "Change to the small image!",
+    "assets": [
+        "small.jpg",
+        "large.jpg"
+    ],
+    "starterMarkup": "<img src=\"large.jpg\">",
+    "nextURL": "/level/3"
+}

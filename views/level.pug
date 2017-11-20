@@ -19,14 +19,14 @@ block body
 
         h2 Code!
         .level__solve
-            input.level__editor(type="text" v-model="markup" value=levelData.markup)
+            input.level__editor(type="text" v-model="markup" value=levelData.starterMarkup)
             button.level__compile(v-on:click="checkMarkup") Spara
 
         .level__solution.level__solution--correct.alert(v-show="correctAnswer")
             .inner
                 h2 Bra
                 p Du har hjälpt SmåFot att lägga till en stor bild på sin sajt.
-                a.button(href="/level/2") Nästa uppgift
+                a.button(href=levelData.nextURL) Nästa uppgift
 
         .level__solution.level__solution--wrong.alert(v-show="wrongAnswer")
             .inner
