@@ -13,9 +13,12 @@ app.get('/', function (req, res) {
 })
 
 app.get('/level/:level', (req, res) => {
+    const level = req.params.level;
+    const levelData = fs.readFileSync(`./resources/leveldata/level-${level}.json`, 'utf-8');
     res.render('level', {
-        title: 'Nivå ' + req.params.level,
-        number: req.params.level
+        title: 'Nivå ' + level,
+        level,
+        levelData: JSON.parse(levelData)
     });
 })
 
