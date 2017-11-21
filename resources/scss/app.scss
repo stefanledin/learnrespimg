@@ -14,15 +14,33 @@ $light-green: #7ECBA1;
 /**
  * Globals
  */
+html, body {
+    height: 100%;
+}
+
 body {
     background: $grey;
     font-family: sans-serif;
     color: $dark-green;
+    line-height: 1.5;
 }
 
 img {
     max-width: 100%;
     height: auto;
+}
+
+h1, .h1 {
+    font-family: 'Chewy', cursive;
+
+    &.h1--title {
+        font-size: 5rem;
+    }
+}
+
+p, .p {
+    font-size: 2rem;
+    font-family: monospace;
 }
 
 .page {

@@ -408,14 +408,27 @@ template {
 /**
  * Globals
  */
+html, body {
+  height: 100%; }
+
 body {
   background: #E7EED2;
   font-family: sans-serif;
-  color: #466551; }
+  color: #466551;
+  line-height: 1.5; }
 
 img {
   max-width: 100%;
   height: auto; }
+
+h1, .h1 {
+  font-family: 'Chewy', cursive; }
+  h1.h1--title, .h1.h1--title {
+    font-size: 5rem; }
+
+p, .p {
+  font-size: 2rem;
+  font-family: monospace; }
 
 .page {
   margin: 0 auto;
