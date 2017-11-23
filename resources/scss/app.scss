@@ -19,6 +19,7 @@ html, body {
 }
 
 body {
+    border-top: 10px solid $green;
     background: $grey;
     font-family: sans-serif;
     color: $dark-green;
@@ -30,12 +31,18 @@ img {
     height: auto;
 }
 
-h1, .h1 {
+@mixin font {
     font-family: 'Chewy', cursive;
-
+}
+h1, .h1 {
+    @include font;
     &.h1--title {
         font-size: 5rem;
     }
+}
+h2, .h2 {
+    @include font;
+    font-size: 3rem;
 }
 
 p, .p {
@@ -43,14 +50,28 @@ p, .p {
     font-family: monospace;
 }
 
-.page {
+.container {
     margin: 0 auto;
     overflow: hidden;
     width: 95%;
     max-width: 800px;
 }
 
-.level {}
+/**
+ * Landing page
+ */
+.sign-up {
+    background: $green;
+    color: $grey;
+}
+.mc-field-group {
+    display: flex;
+    justify-content: space-around;
+}
+
+/**
+ * Levels
+ */
 .level__description {
     width: susy-span(6 of 12);
     line-height: 1.2;

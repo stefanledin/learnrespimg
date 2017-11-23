@@ -412,6 +412,7 @@ html, body {
   height: 100%; }
 
 body {
+  border-top: 10px solid #368C72;
   background: #E7EED2;
   font-family: sans-serif;
   color: #466551;
@@ -426,16 +427,34 @@ h1, .h1 {
   h1.h1--title, .h1.h1--title {
     font-size: 5rem; }
 
+h2, .h2 {
+  font-family: 'Chewy', cursive;
+  font-size: 3rem; }
+
 p, .p {
   font-size: 2rem;
   font-family: monospace; }
 
-.page {
+.container {
   margin: 0 auto;
   overflow: hidden;
   width: 95%;
   max-width: 800px; }
 
+/**
+ * Landing page
+ */
+.sign-up {
+  background: #368C72;
+  color: #E7EED2; }
+
+.mc-field-group {
+  display: flex;
+  justify-content: space-around; }
+
+/**
+ * Levels
+ */
 .level__description {
   width: 49.15254%;
   line-height: 1.2; }
