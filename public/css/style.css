@@ -425,14 +425,15 @@ img {
 h1, .h1 {
   font-family: 'Chewy', cursive; }
   h1.h1--title, .h1.h1--title {
-    font-size: 5rem; }
+    font-size: 2.5rem;
+    line-height: 1.2; }
 
 h2, .h2 {
   font-family: 'Chewy', cursive;
-  font-size: 3rem; }
+  font-size: 2.5rem; }
 
 p, .p {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-family: monospace; }
 
 .container {
@@ -445,12 +446,25 @@ p, .p {
  * Landing page
  */
 .sign-up {
+  padding: 2rem 0;
   background: #368C72;
   color: #E7EED2; }
+  .sign-up h2 {
+    margin: 0 0 1rem 0;
+    line-height: 1.2; }
 
 .mc-field-group {
   display: flex;
-  justify-content: space-around; }
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column; }
+  .mc-field-group input {
+    margin-top: 0.5rem;
+    padding: .5rem 1rem;
+    border: none;
+    border-radius: 5px; }
+  .mc-field-group .button {
+    background: #7ECBA1; }
 
 /**
  * Levels
@@ -502,5 +516,19 @@ button, .button {
 .alert {
   border: 1px solid #7ECBA1;
   overflow: hidden; }
+
+@media (min-width: 768px) {
+  h1.h1--title, .h1.h1--title {
+    font-size: 5rem; }
+  h3, .h3 {
+    font-size: 3rem; }
+  p, .p {
+    font-size: 2rem; }
+  .sign-up h2 {
+    margin: 0 0 2rem 0; }
+  .mc-field-group {
+    flex-direction: row; }
+    .mc-field-group input {
+      margin-top: 0; } }
 
 /*# sourceMappingURL=style.css.map*/

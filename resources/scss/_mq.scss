@@ -1,0 +1,29 @@
+@media (min-width: 768px) {
+
+    h1, .h1 {
+        &.h1--title {
+            font-size: 5rem;
+        }
+    }
+
+    h3, .h3 {
+        font-size: 3rem;
+    }
+
+    p, .p {
+        font-size: 2rem;
+    }
+
+    .sign-up {
+        h2 {
+            margin: 0 0 2rem 0;
+        }
+    }
+    
+    .mc-field-group {
+        flex-direction: row;
+        input {
+            margin-top: 0;
+        }
+    }
+}

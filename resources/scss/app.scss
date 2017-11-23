@@ -37,16 +37,17 @@ img {
 h1, .h1 {
     @include font;
     &.h1--title {
-        font-size: 5rem;
+        font-size: 2.5rem;
+        line-height: 1.2;
     }
 }
 h2, .h2 {
     @include font;
-    font-size: 3rem;
+    font-size: 2.5rem;
 }
 
 p, .p {
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-family: monospace;
 }
 
@@ -61,12 +62,28 @@ p, .p {
  * Landing page
  */
 .sign-up {
+    padding: 2rem 0;
     background: $green;
     color: $grey;
+    h2 {
+        margin: 0 0 1rem 0;
+        line-height: 1.2;
+    }
 }
 .mc-field-group {
     display: flex;
     justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    input {
+        margin-top: 0.5rem;
+        padding: .5rem 1rem;
+        border: none;
+        border-radius: 5px;
+    }
+    .button {
+        background: $light-green;
+    }
 }
 
 /**
@@ -130,3 +147,5 @@ button, .button {
     border: 1px solid $light-green;
     overflow: hidden;
 }
+
+@import "mq";
