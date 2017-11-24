@@ -11,19 +11,46 @@ $dark-green: #466551;
 $green: #368C72;
 $light-green: #7ECBA1;
 
+.bg-grey {
+    background: $grey;
+}
+.bg-dark-green {
+    background: $dark-green;
+}
+.bg-green {
+    background: $green;
+}
+.bg-light-green {
+    background: $light-green;
+}
+
+.text-grey {
+    color: $grey;
+}
+.text-dark-green {
+    color: $dark-green;
+}
+.text-green {
+    color: $green;
+}
+.text-light-green {
+    color: $light-green;
+}
+
 /**
  * Globals
  */
 html, body {
-    height: 100%;
+    min-height: 100%;
 }
 
 body {
-    border-top: 10px solid $green;
+    padding-bottom: 1rem;
+    border-top: 10px solid $light-green;
     background: $grey;
     font-family: sans-serif;
     color: $dark-green;
-    line-height: 1.5;
+    line-height: 1;
 }
 
 img {
@@ -31,11 +58,38 @@ img {
     height: auto;
 }
 
+
+/**
+ *
+ * Helpers
+ *
+ */
+.mt1 {
+    margin-top: 1rem;
+}
+.mt2 {
+    margin-top: 2rem;
+}
+.mb1 {
+    margin-bottom: 1rem;
+}
+.mb2 {
+    margin-bottom: 2rem;
+}
+
+/**
+ *
+ * Typografi
+ *
+ */
 @mixin font {
     font-family: 'Chewy', cursive;
 }
+
 h1, .h1 {
     @include font;
+    margin: 2rem 0;
+    
     &.h1--title {
         font-size: 2.5rem;
         line-height: 1.2;
@@ -43,12 +97,22 @@ h1, .h1 {
 }
 h2, .h2 {
     @include font;
-    font-size: 2.5rem;
+    margin: 2rem 0 .5rem 0;
+    font-size: 2rem;
+}
+
+h3, .h3 {
+    @include font;
 }
 
 p, .p {
-    font-size: 1.5rem;
+    margin: 1rem 0;
+    font-size: 1rem;
     font-family: monospace;
+    line-height: 1.2;
+    &.p--large {
+        font-size: 1.5rem;
+    }
 }
 
 .container {
@@ -58,8 +122,11 @@ p, .p {
     max-width: 800px;
 }
 
+
 /**
- * Landing page
+ *
+ * Landningssida
+ *
  */
 .sign-up {
     padding: 2rem 0;
@@ -90,7 +157,7 @@ p, .p {
  * Levels
  */
 .level__description {
-    width: susy-span(6 of 12);
+    width: susy-span(12 of 12);
     line-height: 1.2;
 }
 .level__assets {
@@ -99,24 +166,40 @@ p, .p {
     color: white;
 }
 
-.level__tip {
+.level__todo {
     background: $light-green;
     color: $dark-green;
 }
 
 .level__solve {
-    margin-top: 10px;
+    display: flex;
 }
 
 .level__editor {
     padding: 8px;
-    width: 100%;
+    flex: 4;    
     font-family: monospace;
     font-size: 16px;
     border: none;
 }
 
-.level__compile {}
+.level__compile {
+    flex: 1;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(0,0,0,.5);
+    display: flex;
+}
+
+.modal__body {
+    width: 95%;
+}
 
 /**
  * Helpers
@@ -134,6 +217,7 @@ p, .p {
 }
 
 button, .button {
+    font-family: monospace;
     padding: 10px;
     background: $dark-green;
     color: white;

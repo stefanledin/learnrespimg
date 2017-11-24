@@ -405,36 +405,92 @@ template {
 /**
  * Colors
  */
+.bg-grey {
+  background: #E7EED2; }
+
+.bg-dark-green {
+  background: #466551; }
+
+.bg-green {
+  background: #368C72; }
+
+.bg-light-green {
+  background: #7ECBA1; }
+
+.text-grey {
+  color: #E7EED2; }
+
+.text-dark-green {
+  color: #466551; }
+
+.text-green {
+  color: #368C72; }
+
+.text-light-green {
+  color: #7ECBA1; }
+
 /**
  * Globals
  */
 html, body {
-  height: 100%; }
+  min-height: 100%; }
 
 body {
-  border-top: 10px solid #368C72;
+  padding-bottom: 1rem;
+  border-top: 10px solid #7ECBA1;
   background: #E7EED2;
   font-family: sans-serif;
   color: #466551;
-  line-height: 1.5; }
+  line-height: 1; }
 
 img {
   max-width: 100%;
   height: auto; }
 
+/**
+ *
+ * Helpers
+ *
+ */
+.mt1 {
+  margin-top: 1rem; }
+
+.mt2 {
+  margin-top: 2rem; }
+
+.mb1 {
+  margin-bottom: 1rem; }
+
+.mb2 {
+  margin-bottom: 2rem; }
+
+/**
+ *
+ * Typografi
+ *
+ */
 h1, .h1 {
-  font-family: 'Chewy', cursive; }
+  font-family: 'Chewy', cursive;
+  margin: 2rem 0; }
   h1.h1--title, .h1.h1--title {
     font-size: 2.5rem;
     line-height: 1.2; }
 
 h2, .h2 {
   font-family: 'Chewy', cursive;
-  font-size: 2.5rem; }
+  margin: 2rem 0 .5rem 0;
+  font-size: 2rem; }
+
+h3, .h3 {
+  font-family: 'Chewy', cursive; }
 
 p, .p {
-  font-size: 1.5rem;
-  font-family: monospace; }
+  margin: 1rem 0;
+  font-size: 1rem;
+  font-family: monospace;
+  line-height: 1.2; }
+  p.p--large, .p.p--large {
+    font-size: 1.5rem; }
 
 .container {
   margin: 0 auto;
@@ -443,7 +499,9 @@ p, .p {
   max-width: 800px; }
 
 /**
- * Landing page
+ *
+ * Landningssida
+ *
  */
 .sign-up {
   padding: 2rem 0;
@@ -470,7 +528,7 @@ p, .p {
  * Levels
  */
 .level__description {
-  width: 49.15254%;
+  width: 100%;
   line-height: 1.2; }
 
 .level__assets {
@@ -478,19 +536,34 @@ p, .p {
   background: #368C72;
   color: white; }
 
-.level__tip {
+.level__todo {
   background: #7ECBA1;
   color: #466551; }
 
 .level__solve {
-  margin-top: 10px; }
+  display: flex; }
 
 .level__editor {
   padding: 8px;
-  width: 100%;
+  flex: 4;
   font-family: monospace;
   font-size: 16px;
   border: none; }
+
+.level__compile {
+  flex: 1; }
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex; }
+
+.modal__body {
+  width: 95%; }
 
 /**
  * Helpers
@@ -505,6 +578,7 @@ p, .p {
   padding: 10px; }
 
 button, .button {
+  font-family: monospace;
   padding: 10px;
   background: #466551;
   color: white;
@@ -520,15 +594,21 @@ button, .button {
 @media (min-width: 768px) {
   h1.h1--title, .h1.h1--title {
     font-size: 5rem; }
+  h2, .h2 {
+    font-size: 2.5rem; }
   h3, .h3 {
     font-size: 3rem; }
   p, .p {
-    font-size: 2rem; }
+    font-size: 1.5rem; }
+    p.p--large, .p.p--large {
+      font-size: 2rem; }
   .sign-up h2 {
     margin: 0 0 2rem 0; }
   .mc-field-group {
     flex-direction: row; }
     .mc-field-group input {
-      margin-top: 0; } }
+      margin-top: 0; }
+  .level__description {
+    width: 49.15254%; } }
 
 /*# sourceMappingURL=style.css.map*/

@@ -4,13 +4,45 @@ block body
     section.section-wrapper
         .container
             h1.h1.h1--title.center Learn Responsive Images
-            p.center
-                | You "know" about responsive images, right?
-                br
-                | Now, the time has come for you to learn about them for real!
-            p.center Soon you'll find a fun, rewarding, story based mini game here that teaches you the very basics of responsive images.
+        .bg-green.text-grey
+            .container
+                p.p--large.center
+                    | You "know" about responsive images, right?
+                    br
+                    | Now, the time has come for you to learn about them for real!
+                //- p.center Soon you'll find a fun, rewarding, story based mini game here that teaches you the very basics of responsive images.
 
-    section.section-wrapper.sign-up
+    section.section-wrapper
+        .container
+            .level
+                .level__description
+                    p #{levelData.description}
+                    
+                    h2 Todo:
+                    .level__todo
+                        .inner
+                            | #{levelData.todo}
+                    
+                h2 Code!
+                .level__solve
+                    input.level__editor(type="text" v-model="markup" value=levelData.starterMarkup)
+                    button.level__compile(v-on:click="checkMarkup") Validate markup
+
+                .level__solution.level__solution--correct.alert(v-show="correctAnswer")
+                    .inner
+                        h2 Bra
+
+                .level__solution.level__solution--wrong.alert(v-show="wrongAnswer")
+                    .inner
+                        h2 Fel
+                        button(v-on:click="tryAgain") Testa igen
+                
+                .modal
+                    .modal__body.bg-grey
+                        h2 Modal
+
+                iframe#render.hidden
+    section.section-wrapper.sign-up(style="display: none;")
         .container
             // Begin MailChimp Signup Form
             #mc_embed_signup
@@ -18,7 +50,7 @@ block body
                     #mc_embed_signup_scroll
                         h2.center Notify me when the story begins!
                         .mc-field-group.p
-                            label(for='mce-EMAIL') Email Address 
+                            label(for='mce-EMAIL') Email 
                             input#mce-EMAIL.required.email(type='email', value='', name='EMAIL')
                             input.p#mc-embedded-subscribe.button(type='submit', value='Subscribe', name='subscribe')
                         #mce-responses.clear
@@ -32,3 +64,5 @@ block body
             // End mc_embed_signup
 
 block scripts
+    script.
+        window.levelData=!{JSON.stringify(levelData)}

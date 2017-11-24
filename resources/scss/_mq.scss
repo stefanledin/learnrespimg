@@ -6,12 +6,19 @@
         }
     }
 
+    h2, .h2 {
+        font-size: 2.5rem;
+    }
+
     h3, .h3 {
         font-size: 3rem;
     }
 
     p, .p {
-        font-size: 2rem;
+        font-size: 1.5rem;
+        &.p--large {
+            font-size: 2rem;
+        }
     }
 
     .sign-up {
@@ -25,5 +32,9 @@
         input {
             margin-top: 0;
         }
+    }
+
+    .level__description {
+        width: susy-span(6 of 12);
     }
 }

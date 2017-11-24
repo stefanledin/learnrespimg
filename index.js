@@ -7,8 +7,10 @@ app.set('view engine', 'pug')
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', function (req, res) {
+    const levelData = fs.readFileSync('./resources/leveldata/landingpage.json');
     res.render('landing-page', {
-        title: 'Learn Responsive Images'
+        title: 'Learn Responsive Images',
+        levelData: JSON.parse(levelData)
     })
 })
 

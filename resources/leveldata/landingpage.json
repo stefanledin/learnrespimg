@@ -1,0 +1,6 @@
+{
+    "level": "0",
+    "description": "Description goes here",
+    "todo": "Add the type=\"email\" attribute to the input.",
+    "starterMarkup": "<input>"
+}

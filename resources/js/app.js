@@ -5,6 +5,13 @@ import Vue from 'vue/dist/vue.esm';
 
 const answers = {
     methods: {
+        level0() {
+            const input = this.$el.querySelector('#render').contentDocument.querySelector('input');
+            if (input.hasAttribute('type')) {
+                return (input.getAttribute('type') === 'email');
+            }
+            return false;
+        },
         level1() {
             const img = this.$el.querySelector('#render').contentDocument.querySelector('img');
             if (img) {
@@ -24,13 +31,10 @@ const answers = {
 
 if (window.levelData) {
     const app = new Vue({
-        el: '.page',
+        el: '.level',
+
         mixins: [answers],
-        /*data: {
-            markup: '',
-            correctAnswer: false,
-            wrongAnswer: false
-        },*/
+
         data: function() {
             let data = window.levelData;
             data = Object.assign({}, {
@@ -40,6 +44,7 @@ if (window.levelData) {
             }, data);
             return data;
         },
+
         methods: {
             checkMarkup() {
                 this.$el.querySelector('#render').contentDocument.documentElement.innerHTML = this.markup;
@@ -51,7 +56,7 @@ if (window.levelData) {
                 this.correctAnswer = false;
                 this.wrongAnswer = false;
             }
-        },
-        components: {}
+        }
+
     });
 }
