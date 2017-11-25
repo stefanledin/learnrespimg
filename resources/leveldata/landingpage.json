@@ -1,6 +1,6 @@
 {
     "level": "0",
-    "description": "Description goes here",
+    "description": "Sign up for an email notification when the game launches! But to be able to do that, you need an input field first!",
     "todo": "Add the type=\"email\" attribute to the input.",
     "starterMarkup": "<input>"
 }

@@ -128,28 +128,24 @@ p, .p {
  * Landningssida
  *
  */
-.sign-up {
-    padding: 2rem 0;
-    background: $green;
-    color: $grey;
-    h2 {
-        margin: 0 0 1rem 0;
-        line-height: 1.2;
-    }
+#mc_embed_signup {
+    margin-top: 1rem;
 }
 .mc-field-group {
     display: flex;
-    justify-content: space-around;
-    align-items: center;
+    justify-content: center;
     flex-direction: column;
     input {
         margin-top: 0.5rem;
         padding: .5rem 1rem;
+        font-size: 16px;
+        font-family: monospace;
+        line-height: 1;
         border: none;
         border-radius: 5px;
     }
     .button {
-        background: $light-green;
+        background: $green;
     }
 }
 
@@ -168,6 +164,7 @@ p, .p {
 
 .level__todo {
     background: $light-green;
+    font-family: monospace;
     color: $dark-green;
 }
 
@@ -187,18 +184,33 @@ p, .p {
     flex: 1;
 }
 
-.modal {
+.modal__overlay {
     position: fixed;
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
     background: rgba(0,0,0,.5);
-    display: flex;
+    overflow: scroll;
 }
-
+.modal {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100%;
+}
+body.has-modal {
+    overflow: hidden;
+}
 .modal__body {
+    margin: 0 auto;
     width: 95%;
+    background: $grey;
+}
+.modal__title {
+    margin: 0 0 1rem 0;
+    text-align: center;
 }
 
 /**
@@ -208,12 +220,17 @@ p, .p {
     text-align: center;
 }
 
+.center-block {
+    margin: 0 auto;
+    display: block;
+}
+
 .hidden {
     display: none;
 }
 
 .inner {
-    padding: 10px;
+    padding: 1rem;
 }
 
 button, .button {

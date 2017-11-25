@@ -1,7 +1,6 @@
 import '../scss/app.scss';
 
 import Vue from 'vue/dist/vue.esm';
-//import level from './components/level.vue';
 
 const answers = {
     methods: {
@@ -47,11 +46,13 @@ if (window.levelData) {
 
         methods: {
             checkMarkup() {
+                document.body.classList.add('has-modal');
                 this.$el.querySelector('#render').contentDocument.documentElement.innerHTML = this.markup;
                 this.correctAnswer = this['level'+this.level]();           
                 this.wrongAnswer = !this.correctAnswer;
             },
             tryAgain() {
+                document.body.classList.remove('has-modal');
                 this.markup = this.starterMarkup;
                 this.correctAnswer = false;
                 this.wrongAnswer = false;
