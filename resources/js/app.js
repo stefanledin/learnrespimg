@@ -44,6 +44,13 @@ if (window.levelData) {
             return data;
         },
 
+        watch: {
+            markup: function(value) {
+                // Fix för iOS citationstecken
+                this.markup = value.replace('”', '"');
+            }
+       },
+
         methods: {
             checkMarkup() {
                 document.body.classList.add('has-modal');
