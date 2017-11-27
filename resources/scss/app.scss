@@ -110,6 +110,11 @@ p, .p {
     font-size: 1rem;
     font-family: monospace;
     line-height: 1.2;
+    // 16px på större skärmar. Samlar allt här ist för
+    // att lägga i mq.scss
+    &.p--small {
+        font-size: 1rem;
+    }
     &.p--large {
         font-size: 1.5rem;
     }
@@ -166,6 +171,9 @@ p, .p {
     background: $light-green;
     font-family: monospace;
     color: $dark-green;
+    p {
+        margin: 0;
+    }
 }
 
 .level__solve {

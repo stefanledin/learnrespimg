@@ -489,6 +489,8 @@ p, .p {
   font-size: 1rem;
   font-family: monospace;
   line-height: 1.2; }
+  p.p--small, .p.p--small {
+    font-size: 1rem; }
   p.p--large, .p.p--large {
     font-size: 1.5rem; }
 
@@ -537,6 +539,8 @@ p, .p {
   background: #7ECBA1;
   font-family: monospace;
   color: #466551; }
+  .level__todo p {
+    margin: 0; }
 
 .level__solve {
   display: flex; }
