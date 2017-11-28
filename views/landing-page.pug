@@ -28,7 +28,7 @@ block body
                     input.level__editor(type="text" v-model="markup" value=levelData.starterMarkup)
                     button.level__compile(v-on:click="checkMarkup") Validate markup
 
-                .modal__overlay(v-show="correctAnswer")
+                .modal__overlay(v-show="correctAnswer", style="display: none;")
                     .modal.sign-up
                         .modal__body
                             .inner
@@ -51,7 +51,7 @@ block body
                                                 input(type='text', name='b_df3a0fc015abfee5f699be7ca_2c8e18b06f', tabindex='-1', value='')
                                 // End mc_embed_signup   
 
-                .modal__overlay(v-show="wrongAnswer")
+                .modal__overlay(v-show="wrongAnswer", style="display: none;")
                     .modal
                         .modal__body
                             .inner
@@ -60,9 +60,6 @@ block body
                                 button.center-block(v-on:click="tryAgain") Try again!
 
                 iframe#render.hidden
-    section.section-wrapper.sign-up(style="display: none;")
-        .container
-            
 
 block scripts
     script.
