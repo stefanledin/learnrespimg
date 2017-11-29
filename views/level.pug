@@ -1,39 +1,41 @@
 extends master.pug
 
 block body
-    .level
-        h2 Nivå #{number}
-        .level__description
-            p #{levelData.description}
-            
-            h3 Todo
-            .level__todo
-                .inner
-                    | #{levelData.todo}
-            
-            h3 Assets
-            pre.level__assets
-                ul
-                    each asset in levelData.assets
-                        li= asset
+    section.section-wrapper
+        .container
+            .level
+                h1 Nivå #{level}
+                .level__description
+                    p #{levelData.description}
+                    
+                    h3 Todo
+                    .level__todo
+                        .inner
+                            | #{levelData.todo}
+                    
+                    h3 Assets
+                    pre.level__assets
+                        ul
+                            each asset in levelData.assets
+                                li= asset
 
-        h2 Code!
-        .level__solve
-            input.level__editor(type="text" v-model="markup" value=levelData.starterMarkup)
-            button.level__compile(v-on:click="checkMarkup") Spara
+                h2 Code!
+                .level__solve
+                    input.level__editor(type="text" v-model="markup" value=levelData.starterMarkup)
+                    button.level__compile(v-on:click="checkMarkup") Spara
 
-        .level__solution.level__solution--correct.alert(v-show="correctAnswer")
-            .inner
-                h2 Bra
-                p Du har hjälpt SmåFot att lägga till en stor bild på sin sajt.
-                a.button(href=levelData.nextURL) Nästa uppgift
+                .level__solution.level__solution--correct.alert(v-show="correctAnswer")
+                    .inner
+                        h2 Bra
+                        p Du har hjälpt SmåFot att lägga till en stor bild på sin sajt.
+                        a.button(href=levelData.nextURL) Nästa uppgift
 
-        .level__solution.level__solution--wrong.alert(v-show="wrongAnswer")
-            .inner
-                h2 Fel
-                button(v-on:click="tryAgain") Testa igen
+                .level__solution.level__solution--wrong.alert(v-show="wrongAnswer")
+                    .inner
+                        h2 Fel
+                        button(v-on:click="tryAgain") Testa igen
 
-        iframe#render.hidden
+                iframe#render.hidden
 
 block scripts
     script.
