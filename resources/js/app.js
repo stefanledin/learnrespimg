@@ -53,10 +53,10 @@ if (window.levelData) {
 
         methods: {
             checkMarkup() {
-                document.body.classList.add('has-modal');
                 this.$el.querySelector('#render').contentDocument.documentElement.innerHTML = this.markup;
                 this.correctAnswer = this['level'+this.level]();           
                 this.wrongAnswer = !this.correctAnswer;
+                document.body.classList.add('has-modal');
             },
             tryAgain() {
                 document.body.classList.remove('has-modal');

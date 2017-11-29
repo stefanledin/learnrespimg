@@ -1,17 +1,18 @@
 @media (min-width: 768px) {
 
     h1, .h1 {
+        font-size: 4rem;
         &.h1--title {
             font-size: 5rem;
         }
     }
 
     h2, .h2 {
-        font-size: 2.5rem;
+        font-size: 2.75rem;
     }
 
     h3, .h3 {
-        font-size: 3rem;
+        font-size: 2rem;
     }
 
     p, .p {
@@ -38,6 +39,9 @@
     }
 
     .level__description {
-        width: susy-span(6 of 12);
+        width: susy-span(10 of 12);
+    }
+    .level__details {
+        width: susy-span(4 of 12);
     }
 }

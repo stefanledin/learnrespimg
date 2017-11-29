@@ -88,8 +88,9 @@ img {
 
 h1, .h1 {
     @include font;
-    margin: 2rem 0;
-    font-size: 2rem;
+    //margin: 2rem 0;
+    margin: 2rem 0 .5rem 0;
+    font-size: 3rem;
     
     &.h1--title {
         font-size: 2.5rem;
@@ -104,6 +105,8 @@ h2, .h2 {
 
 h3, .h3 {
     @include font;
+    margin: 1rem 0 .5rem 0;
+    font-size: 1.5rem;
 }
 
 p, .p {
@@ -162,10 +165,18 @@ p, .p {
     width: susy-span(12 of 12);
     line-height: 1.2;
 }
+.level__details {
+    width: susy-span(12 of 12);
+}
 .level__assets {
     padding: 10px;
     background: $green;
+    font-family: monospace;
     color: white;
+    ul {
+        margin: 0;
+        padding: 0;
+    }
 }
 
 .level__todo {
@@ -177,7 +188,7 @@ p, .p {
     }
 }
 
-.level__solve {
+.level__editor-wrapper {
     display: flex;
 }
 
@@ -201,6 +212,11 @@ p, .p {
     right: 0;
     background: rgba(0,0,0,.5);
     overflow: scroll;
+    opacity: 0;
+    transition: opacity 5s ease-in-out;
+    .has-modal & {
+        opacity: 1;
+    }
 }
 .modal {
     margin-top: 1rem;

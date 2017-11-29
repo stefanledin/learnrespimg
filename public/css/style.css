@@ -471,8 +471,8 @@ img {
  */
 h1, .h1 {
   font-family: 'Chewy', cursive;
-  margin: 2rem 0;
-  font-size: 2rem; }
+  margin: 2rem 0 .5rem 0;
+  font-size: 3rem; }
   h1.h1--title, .h1.h1--title {
     font-size: 2.5rem;
     line-height: 1.2; }
@@ -483,7 +483,9 @@ h2, .h2 {
   font-size: 2rem; }
 
 h3, .h3 {
-  font-family: 'Chewy', cursive; }
+  font-family: 'Chewy', cursive;
+  margin: 1rem 0 .5rem 0;
+  font-size: 1.5rem; }
 
 p, .p {
   margin: 1rem 0;
@@ -531,10 +533,17 @@ p, .p {
   width: 100%;
   line-height: 1.2; }
 
+.level__details {
+  width: 100%; }
+
 .level__assets {
   padding: 10px;
   background: #368C72;
+  font-family: monospace;
   color: white; }
+  .level__assets ul {
+    margin: 0;
+    padding: 0; }
 
 .level__todo {
   background: #7ECBA1;
@@ -543,7 +552,7 @@ p, .p {
   .level__todo p {
     margin: 0; }
 
-.level__solve {
+.level__editor-wrapper {
   display: flex; }
 
 .level__editor {
@@ -563,7 +572,11 @@ p, .p {
   bottom: 0;
   right: 0;
   background: rgba(0, 0, 0, 0.5);
-  overflow: scroll; }
+  overflow: scroll;
+  opacity: 0;
+  transition: opacity 5s ease-in-out; }
+  .has-modal .modal__overlay {
+    opacity: 1; }
 
 .modal {
   margin-top: 1rem;
@@ -615,12 +628,14 @@ button, .button {
   overflow: hidden; }
 
 @media (min-width: 768px) {
-  h1.h1--title, .h1.h1--title {
-    font-size: 5rem; }
+  h1, .h1 {
+    font-size: 4rem; }
+    h1.h1--title, .h1.h1--title {
+      font-size: 5rem; }
   h2, .h2 {
-    font-size: 2.5rem; }
+    font-size: 2.75rem; }
   h3, .h3 {
-    font-size: 3rem; }
+    font-size: 2rem; }
   p, .p {
     font-size: 1.5rem; }
     p.p--large, .p.p--large {
@@ -634,6 +649,8 @@ button, .button {
     .mc-field-group input {
       margin-top: 0; }
   .level__description {
-    width: 49.15254%; } }
+    width: 83.05085%; }
+  .level__details {
+    width: 32.20339%; } }
 
 /*# sourceMappingURL=style.css.map*/
