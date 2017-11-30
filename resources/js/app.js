@@ -15,7 +15,7 @@ const answers = {
             const img = this.$el.querySelector('#render').contentDocument.querySelector('img');
             if (img) {
                 const src = img.getAttribute('src');
-                if (src && src === 'large.jpg') {
+                if (src && src === 'birthday.jpg') {
                     return true;
                 }
             }

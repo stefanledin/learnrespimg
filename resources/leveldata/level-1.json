@@ -1,9 +1,13 @@
 {
     "level": "1",
-    "description": "Cras in fermentum ligula. Etiam scelerisque ligula non lorem tempus iaculis. Curabitur rhoncus non sem tincidunt venenatis. Vivamus nec mattis dolor. Aliquam pretium justo nisl, ut pulvinar mauris consectetur sed. Integer ultrices egestas convallis. Cras vestibulum nibh magna.",
-    "_description": "SmåFot vill ha en stor bild i sidhuvudet från förra årets kalas. Den ska få kompisarna att minnas hur roligt det var då och bli peppade på nytt! SmåFot designar en modern och sajt som ser riktigt bra ut på breda skärmar. (Flera av hans Bigfoot-kompisar är gamers och har ultrabreda skärmar.)",
-    "todo": "Add a src attribute",
-    "assets": ["large.jpg"],
+    "description": "SmallFoot finds a photo from last year's birthday party. He wants to use it as a large header image on the website. That should remind his friends about how fun it was last year!",
+    "todo": "Help SmallFoot add the image to the header!",
+    "assets": ["birthday.jpg"],
     "starterMarkup": "<img>",
+    "messages": {
+        "success": {
+            ""
+        }
+    }
     "nextURL": "/level/2"
 }

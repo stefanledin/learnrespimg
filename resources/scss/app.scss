@@ -169,13 +169,12 @@ p, .p {
     width: susy-span(12 of 12);
 }
 .level__assets {
-    padding: 10px;
     background: $green;
     font-family: monospace;
     color: white;
     ul {
         margin: 0;
-        padding: 0;
+        padding: 0 0 0 1rem;
     }
 }
 

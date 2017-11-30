@@ -537,13 +537,12 @@ p, .p {
   width: 100%; }
 
 .level__assets {
-  padding: 10px;
   background: #368C72;
   font-family: monospace;
   color: white; }
   .level__assets ul {
     margin: 0;
-    padding: 0; }
+    padding: 0 0 0 1rem; }
 
 .level__todo {
   background: #7ECBA1;
