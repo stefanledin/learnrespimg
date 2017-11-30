@@ -1,11 +1,21 @@
 {
     "level": "2",
-    "description": "Den stora bilden var seg att ladda på mobiler, byt till den lilla istället!",
+    "description": "The header image looks very nice, but it's very big. SmallFoot is worried that the website will load slow on his friends phones. After all, the reception is a bit slow here in the forest! It would be a shame if his friends left the site without signing up for the party...",
     "todo": "Change to the small image!",
     "assets": [
-        "small.jpg",
-        "large.jpg"
+        "birthday_small.jpg",
+        "birthday.jpg"
     ],
-    "starterMarkup": "<img src=\"large.jpg\">",
+    "starterMarkup": "<img src=\"birthday.jpg\">",
+    "messages": {
+        "correct": {
+            "headline": "Good!",
+            "text": "The site loads faster on phones now!"
+        },
+        "wrong": {
+            "headline": "Still slow!",
+            "text": "Did you replace birthday.jpg with birthday_small.jpg?"
+        }
+    },
     "nextURL": "/level/3"
 }

@@ -24,6 +24,8 @@ app.get('/level/:level', (req, res) => {
     });
 })
 
+app.get('/source/:level', (req,res) => res.render(`source-${req.params.level}`));
+
 app.use(function (req, res, next) {
     res.status(404).send("Sorry can't find that!")
 })

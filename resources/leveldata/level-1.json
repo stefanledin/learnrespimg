@@ -5,9 +5,14 @@
     "assets": ["birthday.jpg"],
     "starterMarkup": "<img>",
     "messages": {
-        "success": {
-            ""
+        "correct": {
+            "headline": "Great!",
+            "text": "The website now has a nice image in the header!"
+        },
+        "wrong": {
+            "headline": "It didn't work!",
+            "text": "Are you sure that you added the src attribute to the <img>?"
         }
-    }
+    },
     "nextURL": "/level/2"
 }

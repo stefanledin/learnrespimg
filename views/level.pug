@@ -25,21 +25,22 @@ block body
                     h2 Code!
                     .level__editor-wrapper
                         input.level__editor(type="text" v-model="markup" value=levelData.starterMarkup)
-                        button.level__compile(v-on:click="checkMarkup") Save
+                        button.level__compile(v-on:click="checkMarkup") Validate
 
                 .modal__overlay(v-show="correctAnswer", style="display: none")
                     .modal
                         .modal__body
                             .inner
-                                h2.modal__title Good!
-                                p.center Du har hjälpt SmåFot att lägga till en stor bild på sin sajt.
+                                h2.modal__title #{levelData.messages.correct.headline}
+                                p.center #{levelData.messages.correct.text}
                                 a.button.center-block(href=levelData.nextURL) Nästa uppgift
 
                 .modal__overlay(v-show="wrongAnswer", style="display: none;")
                     .modal
                         .modal__body
                             .inner
-                                h2.modal__title Wrong!
+                                h2.modal__title #{levelData.messages.wrong.headline}
+                                p.center #{levelData.messages.wrong.text}
                                 button.center-block(v-on:click="tryAgain") Try again!
 
                 iframe#render.hidden

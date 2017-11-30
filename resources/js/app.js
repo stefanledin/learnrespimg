@@ -23,7 +23,7 @@ const answers = {
         },
         level2() {
             const img = this.$el.querySelector('#render').contentDocument.querySelector('img');
-            return (img.getAttribute('src') === 'small.jpg');
+            return (img.getAttribute('src') === 'birthday_small.jpg');
         }
     }
 };
