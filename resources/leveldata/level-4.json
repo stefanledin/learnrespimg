@@ -1,0 +1,21 @@
+{
+    "level": "4",
+    "description": "SmallFoot discovers that the large image is always loaded no matter the screen size. As he understands it, the small image in the src attribute only works as a fallback. Browsers wants a list of all avaliable versions of the image in the srcset attribute.",
+    "todo": "Add both images to the srcset attribute, starting with the smallest and separated by a comma.",
+    "assets": [
+        "birthday_small.jpg",
+        "birthday_large.jpg"
+    ],
+    "starterMarkup": "<img src=\"birthday_small.jpg\" srcset=\"birthday_large.jpg\">",
+    "messages": {
+        "correct": {
+            "headline": "Good job!",
+            "text": "Thanks to you, the browser now has two images to choose from! But we still have work to do..."
+        },
+        "wrong": {
+            "headline": "Something's not right...",
+            "text": "That wasn't helpful for SmallFoot. Are you sure that the srcset looked like this: \"birthday_small.jpg, birthday_large.jpg\"?"
+        }
+    },
+    "nextURL": "/level/5"
+}

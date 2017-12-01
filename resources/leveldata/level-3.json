@@ -1,7 +1,7 @@
 {
     "level": "3",
     "description": "Most of SmallFoot's friends will visit the website on their phones, but some of his friends is really hard core gamers. They have desktop computers with ultra wide monitors and SmallFoot doesn't want the site to look strange on them.\nWhat if there was a way to load the small image on small screens, and the large image on large screens...?",
-    "todo": "Add a srcset attribute to the <img>",
+    "todo": "Add a srcset attribute containing the link to the large image.",
     "assets": [
         "birthday_small.jpg",
         "birthday_large.jpg"
@@ -9,12 +9,12 @@
     "starterMarkup": "<img src=\"birthday_small.jpg\">",
     "messages": {
         "correct": {
-            "headline": "Good!",
-            "text": "The site loads faster on phones now!"
+            "headline": "srcset is the way to go!",
+            "text": "That's a step in the right direction! But we need to help SmallFoot a bit more..."
         },
         "wrong": {
-            "headline": "Still slow!",
-            "text": "Did you replace birthday.jpg with birthday_small.jpg?"
+            "headline": "We need the srcset!",
+            "text": "Something is missing! Did you add the srcset attribute with a link to birthday_large.jpg?"
         }
     },
     "nextURL": "/level/4"

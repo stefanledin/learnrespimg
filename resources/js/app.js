@@ -24,6 +24,35 @@ const answers = {
         level2() {
             const img = this.$el.querySelector('#render').contentDocument.querySelector('img');
             return (img.getAttribute('src') === 'birthday_small.jpg');
+        },
+        level3() {
+            const img = this.$el.querySelector('#render').contentDocument.querySelector('img');
+            if (img.getAttribute('src') === 'birthday_small.jpg') {
+                if (img.hasAttribute('srcset')) {
+                    return (img.getAttribute('srcset') === 'birthday_large.jpg');
+                }
+            }
+            return false;
+        },
+        level4() {
+            const img = this.$el.querySelector('#render').contentDocument.querySelector('img');
+            if (img.getAttribute('src') === 'birthday_small.jpg') {
+                const srcset = img.getAttribute('srcset');
+                if (srcset.replace(/\s/g, '') === 'birthday_small.jpg,birthday_large.jpg') {
+                    return true;
+                }
+            } 
+            return false;
+        },
+        level5() {
+            const img = this.$el.querySelector('#render').contentDocument.querySelector('img');
+            if (!img.hasAttribute('srcset')) return false;
+
+            const srcset = img.getAttribute('srcset');
+            if (srcset.replace(/\s/g, '') === 'birthday_small.jpg375w,birthday_large.jpg1024w') {
+               return true; 
+            }
+            return false;
         }
     }
 };

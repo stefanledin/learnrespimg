@@ -1,0 +1,21 @@
+{
+    "level": "5",
+    "description": "But now is always the small image loaded instead! Why is this? SmallFoot makes a search on DuckDuckGo (Bigfoots are very serious about their privacy) and realizes that he's forgotten about something. He needs to tell the browser how wide the images are!",
+    "todo": "Add the width after each image file name in the srcset. For example, if the image is 320 pixels wide, write \"image.jpg 320w\"",
+    "assets": [
+        "birthday_small.jpg (375 pixels wide)",
+        "birthday_large.jpg (1024 pixels wide)"
+    ],
+    "starterMarkup": "<img src=\"birthday_small.jpg\" srcset=\"birthday_small.jpg, birthday_large.jpg\">",
+    "messages": {
+        "correct": {
+            "headline": "Yaay!",
+            "text": "It makes SmallFoot very happy to see that the small image is loaded on small screens and the large one on large screens!"
+        },
+        "wrong": {
+            "headline": "It's not working...",
+            "text": "SmallFoot becomes disappointed when the wrong image is loaded."
+        }
+    },
+    "nextURL": "/level/6"
+}
