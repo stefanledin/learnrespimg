@@ -1,0 +1,21 @@
+{
+    "level": "6",
+    "description": "As soon as the screen is wider than 375 pixels, the large image is loaded by the browser. SmallFoot doesn't mind if the image doesn't fill the entire screen all the time. He thinks it's more important that the website loads as fast as possible! He reads about the sizes attribute, which can be used to tell the browser how wide the image will be at different screen sizes.",
+    "todo": "Add a sizes attribute to the <img> with the width (in px) of the smallest image as value.",
+    "assets": [
+        "birthday_small.jpg (375 pixels wide)",
+        "birthday_large.jpg (1024 pixels wide)"
+    ],
+    "starterMarkup": "<img src=\"birthday_small.jpg\" srcset=\"birthday_small.jpg 375w, birthday_large.jpg 1024w\">",
+    "messages": {
+        "correct": {
+            "headline": "Good!",
+            "text": "You've helped SmallFoot with yet another attribute. Now, he needs help controlling at which screen size the large image should be loaded..."
+        },
+        "wrong": {
+            "headline": "sizes matters!",
+            "text": "Where's the sizes attribute? Come on, be a good friend and help SmallFoot now!"
+        }
+    },
+    "nextURL": "/level/7"
+}

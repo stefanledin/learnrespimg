@@ -47,10 +47,18 @@ const answers = {
         level5() {
             const img = this.$el.querySelector('#render').contentDocument.querySelector('img');
             if (!img.hasAttribute('srcset')) return false;
-
+            
             const srcset = img.getAttribute('srcset');
             if (srcset.replace(/\s/g, '') === 'birthday_small.jpg375w,birthday_large.jpg1024w') {
-               return true; 
+                return true; 
+            }
+            return false;
+        },
+        level6() {
+            if (!this.level5()) return false;
+            const img = this.$el.querySelector('#render').contentDocument.querySelector('img');
+            if (img.hasAttribute('sizes')) {
+                return (img.getAttribute('sizes') === '375px');
             }
             return false;
         }
