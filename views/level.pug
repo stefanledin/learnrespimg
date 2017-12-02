@@ -14,6 +14,11 @@ block body
                         .inner
                             | #{levelData.todo}
                     
+                    if levelData.example
+                        h3 Example
+                        .level__example
+                            .inner #{levelData.example}
+                    
                     h3 Assets
                     .level__assets
                         .inner
@@ -24,7 +29,7 @@ block body
                 .level__solve
                     h2 Code!
                     .level__editor-wrapper
-                        input.level__editor(type="text" v-model="markup" value=levelData.starterMarkup)
+                        textarea.level__editor(type="text" v-model="markup" value=levelData.starterMarkup)
                         button.level__compile(v-on:click="checkMarkup") Validate
 
                 .modal__overlay(v-show="correctAnswer", style="display: none")

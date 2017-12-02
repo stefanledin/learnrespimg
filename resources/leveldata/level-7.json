@@ -1,0 +1,22 @@
+{
+    "level": "7",
+    "description": "Now, the browser looks at the sizes attribute and thinks that the image always will be 375 pixels wide. As a result, it will load the most apropriate one, which of course is birthday_small.jpg. SmallFoot thinks that's fine on most phones, but he'd like the large one to be displayed on tablets and larger screens. As he understands it, he could add a media query which tells the browser that the image should be 1024px when the screen is at least 768px wide.",
+    "todo": "Add a media query to the sizes attribute.",
+    "example": "sizes=\"(min-width: {SCREEN}px) {LARGE-WIDTH}px, {SMALL-WIDTH}px\"",
+    "assets": [
+        "birthday_small.jpg (375 pixels wide)",
+        "birthday_large.jpg (1024 pixels wide)"
+    ],
+    "starterMarkup": "<img src=\"birthday_small.jpg\" srcset=\"birthday_small.jpg 375w, birthday_large.jpg 1024w\" sizes=\"375px\">",
+    "messages": {
+        "correct": {
+            "headline": "Success!",
+            "text": "The large image is only loaded on devices with a screen that's at least 768 pixels wide. Thanks to you, SmallFoot has learned how to use media queries in the sizes attribute!"
+        },
+        "wrong": {
+            "headline": "Something's not right...",
+            "text": "If you're not careful, the site might load slow when SmallFoot sends the link to his friends. Make sure that the sizes attribute looks something like this: \"(min-width: 768px) {LARGE-IMAGE-WIDTH}px, 375px\""
+        }
+    },
+    "nextURL": "/level/8"
+}

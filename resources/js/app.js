@@ -61,6 +61,14 @@ const answers = {
                 return (img.getAttribute('sizes') === '375px');
             }
             return false;
+        },
+        level7() {
+            const img = this.$el.querySelector('#render').contentDocument.querySelector('img');
+            if (img.hasAttribute('sizes')) {
+                const sizes = img.getAttribute('sizes');
+                return (sizes.replace(/\s/g, '') === '(min-width:768px)1024px,375px');
+            }
+            return false;
         }
     }
 };

@@ -178,6 +178,12 @@ p, .p {
     }
 }
 
+.level__example {
+    background: $dark-green;
+    font-family: monospace;
+    color: white;
+}
+
 .level__todo {
     background: $light-green;
     font-family: monospace;

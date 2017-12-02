@@ -544,6 +544,11 @@ p, .p {
     margin: 0;
     padding: 0 0 0 1rem; }
 
+.level__example {
+  background: #466551;
+  font-family: monospace;
+  color: white; }
+
 .level__todo {
   background: #7ECBA1;
   font-family: monospace;
@@ -650,6 +655,6 @@ button, .button {
   .level__description {
     width: 83.05085%; }
   .level__details {
-    width: 32.20339%; } }
+    width: 49.15254%; } }
 
 /*# sourceMappingURL=style.css.map*/
