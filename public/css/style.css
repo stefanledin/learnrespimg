@@ -561,9 +561,9 @@ p, .p {
 
 .level__editor {
   padding: 8px;
-  flex: 4;
+  flex: 5;
   font-family: monospace;
-  font-size: 16px;
+  font-size: 14px;
   border: none; }
 
 .level__compile {
@@ -654,6 +654,8 @@ button, .button {
       margin-top: 0; }
   .level__description {
     width: 83.05085%; }
+  .level__editor {
+    font-size: 16px; }
   .level__details {
     width: 49.15254%; } }
 

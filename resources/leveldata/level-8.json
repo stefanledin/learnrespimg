@@ -1,0 +1,21 @@
+{
+    "level": "8",
+    "description": "SmallFoot is thrilled about the control he gets over the different image sizes! Just for the fun of it, he tries to write the media query in other ways. Can you help SmallFoot figure out how to achive the same result using (max-width) instead?",
+    "todo": "Rewrite the sizes attribute so it's using max-width instead of min-width.",
+    "assets": [
+        "birthday_small.jpg (375 pixels wide)",
+        "birthday_large.jpg (1024 pixels wide)"
+    ],
+    "starterMarkup": "<img src=\"birthday_small.jpg\" srcset=\"birthday_small.jpg 375w, birthday_large.jpg 1024w\" sizes=\"(min-width: 768px) 1024px, 375px\">",
+    "messages": {
+        "correct": {
+            "headline": "Good job!",
+            "text": "Was it a bit tricky? SmallFoot thinks media queries can be hard to wrap his head around sometimes, but he's lucky to have a friend like you!"
+        },
+        "wrong": {
+            "headline": "Media queries can be hard...",
+            "text": "Give it another shot! It's almost the same as when you were using min-width, you just have to change the order of the pixel values...🙂"
+        }
+    },
+    "nextURL": "/level/9"
+}

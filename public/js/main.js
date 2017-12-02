@@ -360,6 +360,28 @@ const answers = {
                 return (sizes.replace(/\s/g, '') === '(min-width:768px)1024px,375px');
             }
             return false;
+        },
+        level8() {
+            const img = this.$el.querySelector('#render').contentDocument.querySelector('img');
+            if (img.hasAttribute('sizes')) {
+                const sizes = img.getAttribute('sizes');
+                return (sizes.replace(/\s/g, '') === '(max-width:768px)375px,1024px');
+            }
+            return false;
+        },
+        level9() {
+            const img = this.$el.querySelector('#render').contentDocument.querySelector('img');
+            if (img.hasAttribute('srcset')) {
+                const srcset = img.getAttribute('srcset');
+                if (srcset.replace(/\s/g, '') !== 'birthday_small.jpg375w,birthday_medium.jpg768w,birthday_large.jpg1024w') {
+                    return false;
+                }
+            }
+            if (img.hasAttribute('sizes')) {
+                const sizes = img.getAttribute('sizes');
+                return (sizes.replace(/\s/g, '') === '(min-width:1024px)1024px,(min-width:667px)768px,375px');
+            }
+            return false;
         }
     }
 };
