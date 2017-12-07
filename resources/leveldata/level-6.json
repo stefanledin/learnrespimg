@@ -1,7 +1,7 @@
 {
     "level": "6",
     "description": "As soon as the screen gets wider than 375 pixels, the large image is loaded by the browser. SmallFoot doesn't mind if the image doesn't fill the entire screen all the time. He thinks it's more important that the website loads as fast as possible! He reads about the sizes attribute, which can be used to tell the browser how wide the image should be at different screen sizes.",
-    "todo": "Add a sizes attribute to the <img>. The value should be the width (in px) of the smallest image",
+    "todo": "Add a sizes attribute to the <img>. The value should be the width (in px) of the smallest image.",
     "assets": [
         "birthday_small.jpg (375 pixels wide)",
         "birthday_large.jpg (1024 pixels wide)"

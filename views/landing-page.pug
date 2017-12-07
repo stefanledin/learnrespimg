@@ -3,63 +3,66 @@ extends master
 block body
     section.section-wrapper
         .container
-            h1.h1.h1--title.center Learn Responsive Images
-        .bg-green.text-grey
+            .container__inner
+                h1.h1.h1--title.center Learn Responsive Images
+        .banner
             .container
-                p.p--large.center
-                    | You "know" about responsive images, right?
-                    br
-                    | Now, the time has come for you to learn about them for real!
-                p.center Soon you'll find a fun, rewarding, story based mini game here that teaches you the very basics of responsive images.
+                .container__inner
+                    p.p--large.center
+                        | You "know" about responsive images, right?
+                        br
+                        | Now, the time has come for you to learn about them for real!
+                    p.center Soon you'll find a fun, rewarding, story based mini game here that teaches you the very basics of responsive images.
 
     section.section-wrapper
-        .container
-            .level
-                .level__description
-                    p #{levelData.description}
-                    
-                    h2 Todo:
-                    .level__todo
-                        .inner
-                            p.p--small #{levelData.todo}
-                    
-                h2 Code!
-                .level__solve
-                    input.level__editor(type="text" v-model="markup" value=levelData.starterMarkup)
-                    button.level__compile(v-on:click="checkMarkup") Validate markup
-
-                .modal__overlay(v-show="correctAnswer", style="display: none;")
-                    .modal.sign-up
-                        .modal__body
+        .container.container--bg
+            .container__inner
+                .level
+                    .level__description
+                        p #{levelData.description}
+                        
+                        h2 Todo:
+                        .level__todo
                             .inner
-                                h2.modal__title Correct!
-                                p.center Now, fill in your email address and you'll get notified when the game has launched!
-                                // Begin MailChimp Signup Form
-                                #mc_embed_signup
-                                    form#mc-embedded-subscribe-form.validate(action='https://stefanledin.us17.list-manage.com/subscribe/post?u=df3a0fc015abfee5f699be7ca&id=2c8e18b06f', method='post', name='mc-embedded-subscribe-form', target='_blank', novalidate='')
-                                        #mc_embed_signup_scroll
-                                            .mc-field-group
-                                                input#mce-EMAIL.required.email(type='email', value='', name='EMAIL' placeholder='Email')
-                                                input#mc-embedded-subscribe.button(type='submit', value='Subscribe', name='subscribe')
-                                            #mce-responses.clear
-                                                #mce-error-response.response(style='display:none')
-                                                    p.center Thanks! See you soon! 🌲
-                                                #mce-success-response.response(style='display:none')
-                                                    p.center Humm, something went wrong 😕
-                                            // real people should not fill this in and expect good things - do not remove this or risk form bot signups
-                                            div(style='position: absolute; left: -5000px;', aria-hidden='true')
-                                                input(type='text', name='b_df3a0fc015abfee5f699be7ca_2c8e18b06f', tabindex='-1', value='')
-                                // End mc_embed_signup   
+                                p.p--small #{levelData.todo}
+                        
+                    h2 Code!
+                    .level__solve
+                        input.level__editor(type="text" v-model="markup" value=levelData.starterMarkup)
+                        button.level__compile(v-on:click="checkMarkup") Validate markup
 
-                .modal__overlay(v-show="wrongAnswer", style="display: none;")
-                    .modal
-                        .modal__body
-                            .inner
-                                h2.modal__title Wrong!
-                                p.center It seems like the input doesn't have the right attribute I'm afraid 😕 Are you sure you've set the "type" to "email"?
-                                button.center-block(v-on:click="tryAgain") Try again!
+                    .modal__overlay(v-show="correctAnswer", style="display: none;")
+                        .modal.sign-up
+                            .modal__body
+                                .inner
+                                    h2.modal__title Correct!
+                                    p.center Now, fill in your email address and you'll get notified when the game has launched!
+                                    // Begin MailChimp Signup Form
+                                    #mc_embed_signup
+                                        form#mc-embedded-subscribe-form.validate(action='https://stefanledin.us17.list-manage.com/subscribe/post?u=df3a0fc015abfee5f699be7ca&id=2c8e18b06f', method='post', name='mc-embedded-subscribe-form', target='_blank', novalidate='')
+                                            #mc_embed_signup_scroll
+                                                .mc-field-group
+                                                    input#mce-EMAIL.required.email(type='email', value='', name='EMAIL' placeholder='Email')
+                                                    input#mc-embedded-subscribe.button(type='submit', value='Subscribe', name='subscribe')
+                                                #mce-responses.clear
+                                                    #mce-error-response.response(style='display:none')
+                                                        p.center Thanks! See you soon! 🌲
+                                                    #mce-success-response.response(style='display:none')
+                                                        p.center Humm, something went wrong 😕
+                                                // real people should not fill this in and expect good things - do not remove this or risk form bot signups
+                                                div(style='position: absolute; left: -5000px;', aria-hidden='true')
+                                                    input(type='text', name='b_df3a0fc015abfee5f699be7ca_2c8e18b06f', tabindex='-1', value='')
+                                    // End mc_embed_signup   
 
-                iframe#render.hidden
+                    .modal__overlay(v-show="wrongAnswer", style="display: none;")
+                        .modal
+                            .modal__body
+                                .inner
+                                    h2.modal__title Wrong!
+                                    p.center It seems like the input doesn't have the right attribute I'm afraid 😕 Are you sure you've set the "type" to "email"?
+                                    button.center-block(v-on:click="tryAgain") Try again!
+
+                    iframe#render.hidden
 
 block scripts
     script.

@@ -14,6 +14,12 @@ app.get('/', function (req, res) {
     })
 })
 
+app.get('/intro', function (req, res) {
+    res.render('intro', {
+        title: 'Intro – Learn Responsive Images'
+    })
+});
+
 app.get('/level/:level', (req, res) => {
     const level = req.params.level;
     const levelData = fs.readFileSync(`./resources/leveldata/level-${level}.json`, 'utf-8');

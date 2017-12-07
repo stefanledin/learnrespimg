@@ -22,6 +22,17 @@
         }
     }
 
+    
+    /**
+     *
+     * Layout
+     *
+     */
+    
+    .col6 {
+        width: susy-span(6 of 12);
+    }
+
     .sign-up {
         h2 {
             margin: 0 0 2rem 0;

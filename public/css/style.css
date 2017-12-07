@@ -438,7 +438,8 @@ html, body {
 body {
   padding-bottom: 1rem;
   border-top: 10px solid #7ECBA1;
-  background: #E7EED2;
+  background: url("/img/landscape.jpg") no-repeat bottom center #E7EED2;
+  background-size: cover;
   font-family: sans-serif;
   color: #466551;
   line-height: 1; }
@@ -449,29 +450,12 @@ img {
 
 /**
  *
- * Helpers
- *
- */
-.mt1 {
-  margin-top: 1rem; }
-
-.mt2 {
-  margin-top: 2rem; }
-
-.mb1 {
-  margin-bottom: 1rem; }
-
-.mb2 {
-  margin-bottom: 2rem; }
-
-/**
- *
  * Typografi
  *
  */
 h1, .h1 {
   font-family: 'Chewy', cursive;
-  margin: 2rem 0 .5rem 0;
+  margin: 0 0 .5rem 0;
   font-size: 3rem; }
   h1.h1--title, .h1.h1--title {
     font-size: 2.5rem;
@@ -497,11 +481,46 @@ p, .p {
   p.p--large, .p.p--large {
     font-size: 1.5rem; }
 
+a, a:visited {
+  color: #368C72; }
+
+/**
+ *
+ * Layout
+ *
+ */
+header {
+  margin: .5rem 0; }
+
+.header-title {
+  margin: 0; }
+
 .container {
   margin: 0 auto;
   overflow: hidden;
   width: 95%;
-  max-width: 800px; }
+  max-width: 900px;
+  line-height: normal; }
+  .container.container--bg {
+    background: rgba(231, 238, 210, 0.8); }
+
+.container__inner {
+  padding: 1rem 2rem; }
+
+.banner {
+  background: rgba(54, 140, 114, 0.8);
+  color: #E7EED2; }
+
+.row {
+  overflow: hidden;
+  float: none; }
+
+.col6 {
+  width: 100%;
+  float: left; }
+
+.col12 {
+  width: 100%; }
 
 /**
  *
@@ -617,7 +636,7 @@ body.has-modal {
 .inner {
   padding: 1rem; }
 
-button, .button {
+button, a.button, .button {
   font-family: monospace;
   padding: 10px;
   background: #466551;
@@ -644,6 +663,13 @@ button, .button {
     font-size: 1.5rem; }
     p.p--large, .p.p--large {
       font-size: 2rem; }
+  /**
+     *
+     * Layout
+     *
+     */
+  .col6 {
+    width: 49.15254%; }
   .sign-up h2 {
     margin: 0 0 2rem 0; }
   #mc_embed_signup {

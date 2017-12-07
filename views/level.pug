@@ -1,54 +1,58 @@
 extends master.pug
 
 block body
-    section.section-wrapper
+    header
         .container
-            .level
-                h1 Level #{level}
-                .level__description
-                    p #{levelData.description}
-                    
-                .level__details
-                    h3 Todo
-                    .level__todo
-                        .inner
-                            | #{levelData.todo}
-                    
-                    if levelData.example
-                        h3 Example
-                        .level__example
-                            .inner #{levelData.example}
-                    
-                    h3 Assets
-                    .level__assets
-                        .inner
-                            ul
-                                each asset in levelData.assets
-                                    li= asset
-
-                .level__solve
-                    h2 Code!
-                    .level__editor-wrapper
-                        textarea.level__editor(type="text" v-model="markup" value=levelData.starterMarkup)
-                        button.level__compile(v-on:click="checkMarkup") Validate
-
-                .modal__overlay(v-show="correctAnswer", style="display: none")
-                    .modal
-                        .modal__body
+            h3.header-title Learn Responsive Images
+    section.section-wrapper
+        .container.container--bg
+            .container__inner
+                .level
+                    h1 Level #{level}
+                    .level__description
+                        p #{levelData.description}
+                        
+                    .level__details
+                        h3 Todo
+                        .level__todo
                             .inner
-                                h2.modal__title #{levelData.messages.correct.headline}
-                                p.center #{levelData.messages.correct.text}
-                                a.button.center-block(href=levelData.nextURL) Continue to the next level!
-
-                .modal__overlay(v-show="wrongAnswer", style="display: none;")
-                    .modal
-                        .modal__body
+                                | #{levelData.todo}
+                        
+                        if levelData.example
+                            h3 Example
+                            .level__example
+                                .inner #{levelData.example}
+                        
+                        h3 Assets
+                        .level__assets
                             .inner
-                                h2.modal__title #{levelData.messages.wrong.headline}
-                                p.center #{levelData.messages.wrong.text}
-                                button.center-block(v-on:click="tryAgain") Try again!
+                                ul
+                                    each asset in levelData.assets
+                                        li= asset
 
-                iframe#render.hidden
+                    .level__solve
+                        h2 Code!
+                        .level__editor-wrapper
+                            textarea.level__editor(type="text" v-model="markup" value=levelData.starterMarkup)
+                            button.level__compile(v-on:click="checkMarkup") Validate
+
+                    .modal__overlay(v-show="correctAnswer", style="display: none")
+                        .modal
+                            .modal__body
+                                .inner
+                                    h2.modal__title #{levelData.messages.correct.headline}
+                                    p.center #{levelData.messages.correct.text}
+                                    a.button.center-block(href=levelData.nextURL) Continue to the next level!
+
+                    .modal__overlay(v-show="wrongAnswer", style="display: none;")
+                        .modal
+                            .modal__body
+                                .inner
+                                    h2.modal__title #{levelData.messages.wrong.headline}
+                                    p.center #{levelData.messages.wrong.text}
+                                    button.center-block(v-on:click="tryAgain") Try again!
+
+                    iframe#render.hidden
 
 block scripts
     script.

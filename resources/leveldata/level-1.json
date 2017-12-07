@@ -7,7 +7,7 @@
     "messages": {
         "correct": {
             "headline": "Great!",
-            "text": "The website now has a nice image in the header!"
+            "text": "The website has a nice image in the header now!"
         },
         "wrong": {
             "headline": "It didn't work!",

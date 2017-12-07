@@ -47,7 +47,8 @@ html, body {
 body {
     padding-bottom: 1rem;
     border-top: 10px solid $light-green;
-    background: $grey;
+    background: url('/img/landscape.jpg') no-repeat bottom center $grey;
+    background-size: cover;
     font-family: sans-serif;
     color: $dark-green;
     line-height: 1;
@@ -59,23 +60,6 @@ img {
 }
 
 
-/**
- *
- * Helpers
- *
- */
-.mt1 {
-    margin-top: 1rem;
-}
-.mt2 {
-    margin-top: 2rem;
-}
-.mb1 {
-    margin-bottom: 1rem;
-}
-.mb2 {
-    margin-bottom: 2rem;
-}
 
 /**
  *
@@ -89,7 +73,7 @@ img {
 h1, .h1 {
     @include font;
     //margin: 2rem 0;
-    margin: 2rem 0 .5rem 0;
+    margin: 0 0 .5rem 0;
     font-size: 3rem;
     
     &.h1--title {
@@ -124,13 +108,55 @@ p, .p {
     }
 }
 
+a, a:visited {
+    color: $green;
+}
+
+
+/**
+ *
+ * Layout
+ *
+ */
+
+header {
+    margin: .5rem 0;
+}
+.header-title {
+    margin: 0;
+}
+
 .container {
     margin: 0 auto;
     overflow: hidden;
     width: 95%;
-    max-width: 800px;
+    max-width: 900px;
+    line-height: normal;
+    &.container--bg {
+        background: transparentize($grey, .2);
+    }
+}
+.container__inner {
+    padding: 1rem 2rem;
 }
 
+.banner {
+    background: transparentize($green, .2);
+    color: $grey;
+}
+
+.row {
+    overflow: hidden;
+    float: none;
+}
+.col6 {
+    width: susy-span(12 of 12);
+    float: left;
+}
+
+.col12 {
+    width: susy-span(12 of 12);
+}
 
 /**
  *
@@ -263,7 +289,7 @@ body.has-modal {
     padding: 1rem;
 }
 
-button, .button {
+button, a.button, .button {
     font-family: monospace;
     padding: 10px;
     background: $dark-green;

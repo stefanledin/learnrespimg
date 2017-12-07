@@ -1,6 +1,6 @@
 {
     "level": "9",
-    "description": "SmallFoot is really starting to understand how the sizes attribute works and how it can be used. He decides that there should be a third, medium sized image for large phones and tablets. It should be used on screen that is at least 667 pixels wide. The large one on screens wider than 1024. (SmallFoot thinks mobile first, so use min-width again.)",
+    "description": "SmallFoot is really starting to understand how the sizes attribute works and how it can be used. He decides that there should be a third, medium sized image for large phones and tablets. It should be used on screens that is at least 667 pixels wide. The large one on screens wider than 1024. (SmallFoot thinks mobile first, so use min-width again.)",
     "todo": "Adjust the media queries so birthday_medium.jpg is loaded when (min-width: 667px). Use birthday_large.jpg when (min-width: 1024px)",
     "assets": [
         "birthday_small.jpg (375 pixels wide)",

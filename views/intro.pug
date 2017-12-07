@@ -1,0 +1,20 @@
+extends master
+
+block body
+    header
+        .container
+            h3.header-title Learn Responsive Images
+    section.section-wrapper
+        .container.container--bg
+            .container__inner
+                h1.center Say hello to {name}
+                .row
+                    .col6
+                        img(src="/img/bigfoot.png", style="max-height: 400px; margin: 0 auto; display: block;")
+                    .col6
+                        p {Name} is a Bigfoot living somewhere, deep in the remote woods of the Pacific Northwest.
+                        p His 13:th birthday is coming up and he's planning a big party for his friends.<br>Since {name} is learning how to build websites on his spare time, he thinks it would be a fun project to create a <a href="https://en.wikipedia.org/wiki/RSVP_(invitations)" target="_blank">RSVP</a> website for the party.
+                        p One challenge he will face is to keep the weight of the site down. You see, the connection speed can be a bit slow this far out in the forest.<br>{Name} fears that his friends will leave the website before it's fully loaded and miss his birtyday party.
+                        p Can you help {name} optimizing the site?
+                        a(href="/level/1").h3.button I can!
+                        //- p Images is by far the heaviest resource on websites, so he's going to need your help with optimizing them for both smartphones and desktop computers.
