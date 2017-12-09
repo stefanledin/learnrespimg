@@ -91,6 +91,14 @@ const answers = {
                 return (sizes.replace(/\s/g, '') === '(min-width:1024px)1024px,(min-width:667px)768px,375px');
             }
             return false;
+        },
+        level10() {
+            const img = this.$el.querySelector('#render').contentDocument.querySelector('img');
+            if (img.hasAttribute('srcset')) {
+                const srcset = img.getAttribute('srcset');
+                return (srcset.replace(/\s/g, '') === 'balloon.png150w,balloon_x2.png300w');
+            }
+            return false;
         }
     }
 };

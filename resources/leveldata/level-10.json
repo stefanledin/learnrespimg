@@ -1,0 +1,21 @@
+{
+    "level": "10",
+    "description": "SmallFoot is happy with the header image and moves on with the design. He creates a clipart style image of a balloon which he adds next to the signup form. However, the illustration looks a bit blurry on his big brothers phone. It's a retina screen, so the image needs to be twice as big as the size it will be displayed at. For example, if it's 200px wide on the site, it needs to be 400px wide. ",
+    "todo": "Add a srcset attribute with links to both versions of the image.",
+    "assets": [
+        "balloon.png (150 pixels wide)",
+        "balloon_x2.png (300 pixels wide)"
+    ],
+    "starterMarkup": "<img src=\"balloon.png\">",
+    "messages": {
+        "correct": {
+            "headline": "Good!",
+            "text": "Sure, the difference in kilobytes isn't that big between these two images, but we gotta give SmallFoot credit for not taking any shortcuts!"
+        },
+        "wrong": {
+            "headline": "Try again!",
+            "text": "Come on, you have done this before! 😉"
+        }
+    },
+    "nextURL": "/level/11"
+}
