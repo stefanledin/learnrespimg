@@ -96,8 +96,37 @@ const answers = {
             const img = this.$el.querySelector('#render').contentDocument.querySelector('img');
             if (img.hasAttribute('srcset')) {
                 const srcset = img.getAttribute('srcset');
-                return (srcset.replace(/\s/g, '') === 'balloon.png150w,balloon_x2.png300w');
+                return (srcset.replace(/\s/g, '') === 'balloon.png150w,balloon_2x.png300w');
             }
+            return false;
+        },
+        level11() {
+            if (!this.level10()) return false;
+            const img = this.$el.querySelector('#render').contentDocument.querySelector('img');
+            if (img.hasAttribute('sizes')) {
+                return (img.getAttribute('sizes') === '150px');
+            }
+            return false;
+        },
+        level12() {
+            const render = this.$el.querySelector('#render'); 
+            const picture = render.contentDocument.querySelector('picture');
+            const source = render.contentDocument.querySelector('source');
+            const img = render.contentDocument.querySelector('img');
+            if (!img || img.getAttribute('src') !== 'cake.png') return false;
+            console.log('img finns');
+            if (!picture) return false;
+            console.log('picture finns');
+            if (!source) return false;
+            console.log('source finns');
+
+            if (source.getAttribute('type') === 'image/svg+xml') {
+                console.log('type är rätt...')
+                if (source.getAttribute('srcset') === 'cake.svg') {
+                    return true;
+                }
+            }
+            
             return false;
         }
     }

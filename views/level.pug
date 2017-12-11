@@ -33,7 +33,7 @@ block body
                     .level__solve
                         h2 Code!
                         .level__editor-wrapper
-                            textarea.level__editor(type="text" v-model="markup" value=levelData.starterMarkup)
+                            textarea.level__editor(type="text" rows="5" v-model="markup" value=levelData.starterMarkup)
                             button.level__compile(v-on:click="checkMarkup") Validate
 
                     .modal__overlay(v-show="correctAnswer", style="display: none")
