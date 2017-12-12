@@ -2,7 +2,7 @@
     "level": "12",
     "description": "The balloon image gave the site a nice touch. SmallFoot decides to add yet another illustration, one that he has drawn himself actually! It's an illustration of a birthday cake that he has made in Inkscape. SmallFoot has read that if he exports an SVG instead of an PNG, the illustration will look sharp on all screens no matter the resolution. He wants to try that! But he realizes of course that a PNG fallback is required. Maybe the <picture> element comes in handy here...?",
     "todo": "Add a <source> tag for the SVG inside the <picture> element.",
-    "example": "<source srcset=\"{filename}\" type=\"image/svg+xml\"",
+    "example": "<source srcset=\"{filename}\" type=\"image/svg+xml\">",
     "assets": [
         "cake.png",
         "cake.svg"
@@ -10,12 +10,12 @@
     "starterMarkup": "<picture>\n  <img src=\"cake.png\">\n</picture>",
     "messages": {
         "correct": {
-            "headline": "",
-            "text": ""
+            "headline": "Well done!",
+            "text": "It's always hard to learn new things, but you got it right! Browsers with SVG support will load cake.svg and those without will fall back to cake.png."
         },
         "wrong": {
-            "headline": "",
-            "text": ""
+            "headline": "Give it another try!",
+            "text": "Don't worry, we haven't used the <picture> element before, so it's okay to struggle a bit. But it's not that hard! Just add a <source> tag above the <img>!"
         }
     },
     "nextURL": "/level/13"

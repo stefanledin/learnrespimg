@@ -1,0 +1,27 @@
+{
+    "level": "15",
+    "description": "",
+    "todo": "",
+    "example": "",
+    "assets": [
+        "coffee_small.jpg (375 pixels wide)",
+        "coffee_small_2x.jpg (759 pixels wide)",
+        "coffee_medium.jpg (568 pixels wide)",
+        "coffee_medium_2x.jpg (1136 pixels wide)",
+        "coffee_large.jpg (768 pixels wide)",
+        "coffee_large_2x.jpg (1536 pixels wide)",
+
+    ],
+    "starterMarkup": "<img src=\"birthday_small.jpg\" srcset=\"birthday_small.jpg 375w, birthday_large.jpg 1024w\" sizes=\"(min-width: 1024px) 1024px, (min-width: 667px) 768px, 375px\">",
+    "messages": {
+        "correct": {
+            "headline": "You're the best!",
+            "text": "Nothing has changed, and that's a good thing! With your help, SmallFoot has learned very much about the <picture> element."
+        },
+        "wrong": {
+            "headline": "Don't give up!",
+            "text": "That's not how it should be done, but SmallFoot needs your help with this one so give it another try!"
+        }
+    },
+    "nextURL": ""
+}

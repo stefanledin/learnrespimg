@@ -1,0 +1,23 @@
+{
+    "level": "14",
+    "description": "As SmallFoot understands it, the <picture> element is most useful for situations like this one with a PNG image as fallback for SVG. When we're just changing between different versions of the same image, <img> with srcset and sizes attributes seems to be recommended to use. But just for fun, can you help SmallFoot convert the header image to a <picture> element instead?",
+    "todo": "Create a <picture> element that works exactly like the following <img>. Use two <source> tags, one for medium and one for large. Add \"media\" attributes for the media queries. The small image should be the fallback.",
+    "example": "<source srcset=\"{filename}\" media=\"(min-width: 768px)\">",
+    "assets": [
+        "birthday_small.jpg (375 pixels wide)",
+        "birthday_medium.jpg (768 pixels wide)",
+        "birthday_large.jpg (1024 pixels wide)"
+    ],
+    "starterMarkup": "<img src=\"birthday_small.jpg\" srcset=\"birthday_small.jpg 375w, birthday_large.jpg 1024w\" sizes=\"(min-width: 1024px) 1024px, (min-width: 667px) 768px, 375px\">",
+    "messages": {
+        "correct": {
+            "headline": "You're the best!",
+            "text": "Nothing has changed, and that's a good thing! With your help, SmallFoot has learned very much about the <picture> element."
+        },
+        "wrong": {
+            "headline": "Don't give up!",
+            "text": "That's not how it should be done, but SmallFoot needs your help with this one so give it another try!"
+        }
+    },
+    "nextURL": "/level/15"
+}

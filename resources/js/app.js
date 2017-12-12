@@ -114,20 +114,58 @@ const answers = {
             const source = render.contentDocument.querySelector('source');
             const img = render.contentDocument.querySelector('img');
             if (!img || img.getAttribute('src') !== 'cake.png') return false;
-            console.log('img finns');
             if (!picture) return false;
-            console.log('picture finns');
             if (!source) return false;
-            console.log('source finns');
 
             if (source.getAttribute('type') === 'image/svg+xml') {
-                console.log('type är rätt...')
                 if (source.getAttribute('srcset') === 'cake.svg') {
                     return true;
                 }
             }
             
             return false;
+        },
+        level13() {
+            const img = render.contentDocument.querySelector('img');
+            if (!img || img.getAttribute('src') !== 'cake.png') return false;
+            const picture = render.contentDocument.querySelector('picture');
+
+            if (!picture) return false;
+            const source = render.contentDocument.querySelectorAll('source');
+            if (source.length !== 2) return false;
+            const correctPngSrcset = 'cake.png1x,cake_2x.png2x';
+            const correctSvgSrcset = 'cake.svg';
+            for (let i = 0; i < source.length; i++) {
+                if (source[i].hasAttribute('srcset')) {
+                    if (source[i].getAttribute('srcset').replace(/\s/g, '') !== (correctPngSrcset || correctSvgSrcset)) {
+                        continue;
+                    }
+                }
+            }
+
+            return true;
+        },
+        level14() {
+            const picture = render.contentDocument.querySelector('picture');
+            if (!picture) return false;
+            const img = render.contentDocument.querySelector('img');
+            if (!img) return false;
+            if (img.hasAttribute('src')) {
+                if (img.getAttribute('src') !== 'birthday_small.jpg') {
+                    return false;
+                }
+            } else {
+                return false;
+            }
+            const source = render.contentDocument.querySelectorAll('source');
+            if (source.length !== 2) return false;
+            if (source[0].getAttribute('srcset') !== 'birthday_large.jpg') return false;
+            if (source[0].getAttribute('media').replace(/\s/g, '') !== '(min-width:1024px)') return false;
+            
+            if (source[1].getAttribute('srcset') !== 'birthday_medium.jpg') return false;
+            if (source[1].getAttribute('media').replace(/\s/g, '') !== '(min-width:667px)') return false;
+
+            return true;
         }
     }
 };

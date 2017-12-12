@@ -1,0 +1,23 @@
+{
+    "level": "13",
+    "description": "SmallFoot borrows his mothers phone, which has a retina screen but an old browser without SVG support. He thinks that's a weird edge case, but since he's currently learning about the <picture> element, he'd like to find a solution anyway. Can you help him add a retina version of cake.png?",
+    "todo": "Add another <source> tag for the two PNG files. Use x-descriptors instead of the image width in pixels.",
+    "example": "\"image.jpg 1x, image_2x.jpg 2x\"",
+    "assets": [
+        "cake.png (300 pixels wide)",
+        "cake_2x.png (600 pixels wide)",
+        "cake.svg"
+    ],
+    "starterMarkup": "<picture>\n  <source srcset=\"cake.svg\" type=\"image/svg+xml\">\n  <img src=\"cake.png\">\n</picture>",
+    "messages": {
+        "correct": {
+            "headline": "Looking sharp!",
+            "text": "SmallFoot found this a bit hard, but it's totally worth it since his illustration now looks crystal clear on all devices!"
+        },
+        "wrong": {
+            "headline": "This isn't that easy!",
+            "text": "SmallFoot thinks this is hard to. That's why you need to keep on trying and help him!"
+        }
+    },
+    "nextURL": "/level/14"
+}
