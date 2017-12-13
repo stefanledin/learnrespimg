@@ -457,6 +457,16 @@ const answers = {
             if (source[1].getAttribute('media').replace(/\s/g, '') !== '(min-width:667px)') return false;
 
             return true;
+        },
+        level15() {
+            const img = render.contentDocument.querySelector('img');
+            if (!img) return false;
+            if (img.getAttribute('src') !== 'coffee_small.jpg') return false;
+            if (!img.hasAttribute('srcset')) return false;
+            if (!img.hasAttribute('sizes')) return false;
+            if (!img.getAttribute('sizes').replace(/\s/, '') === '(min-width:600px)320px,(min-width:320px)600px,320px') return false;
+            if (!img.getAttribute('srcset').replace(/\s/, '') === 'coffee_small.jpg320w,coffee_medium.jpg600w,coffee_small_2x.jpg640w,coffee_medium_2x.jpg1200w') return false;
+            return true;
         }
     }
 };

@@ -1,27 +1,24 @@
 {
     "level": "15",
-    "description": "",
-    "todo": "",
+    "description": "The last thing SmallFoot wants to add is three columns with one image in each. One is a picture of the smorgasbord from last year, one on the snacks and one on the drinks. But since SmallFoot won't switch from one to three columns until the screen width is at least 600 pixels, the images will be smaller on bigger screens. The columns, and their images, will never be wider than 320px. This means that the images can be up to 599px on screens smaller than 600px, but never larger than 320px after that. Can you help SmallFoot one last time?",
+    "todo": "coffee_small.jpg should be used on screens smaller than 320px. Use coffee_medium between 320 and 600px. On screens that is at least 600px, use coffee_small.jpg again. (Use min-width in the sizes attribute)",
     "example": "",
     "assets": [
-        "coffee_small.jpg (375 pixels wide)",
-        "coffee_small_2x.jpg (759 pixels wide)",
-        "coffee_medium.jpg (568 pixels wide)",
-        "coffee_medium_2x.jpg (1136 pixels wide)",
-        "coffee_large.jpg (768 pixels wide)",
-        "coffee_large_2x.jpg (1536 pixels wide)",
-
+        "coffee_small.jpg (320 pixels wide)",
+        "coffee_small_2x.jpg (640 pixels wide)",
+        "coffee_medium.jpg (600 pixels wide)",
+        "coffee_medium_2x.jpg (1200 pixels wide)"
     ],
-    "starterMarkup": "<img src=\"birthday_small.jpg\" srcset=\"birthday_small.jpg 375w, birthday_large.jpg 1024w\" sizes=\"(min-width: 1024px) 1024px, (min-width: 667px) 768px, 375px\">",
+    "starterMarkup": "<img src=\"coffee_small.jpg\">",
     "messages": {
         "correct": {
-            "headline": "You're the best!",
-            "text": "Nothing has changed, and that's a good thing! With your help, SmallFoot has learned very much about the <picture> element."
+            "headline": "We did it!",
+            "text": "SmallFoot thinks this was the hardest problem he faced durning the development of this site. But thank's to you, the site is finished in time!"
         },
         "wrong": {
-            "headline": "Don't give up!",
-            "text": "That's not how it should be done, but SmallFoot needs your help with this one so give it another try!"
+            "headline": "When you got this right, the site is finished!",
+            "text": "SmallFoot thinks this is very hard to, but you need to keep on trying! Without your help, the site may not be finished in time..."
         }
     },
-    "nextURL": ""
+    "nextURL": "/the-end"
 }
