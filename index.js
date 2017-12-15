@@ -24,9 +24,15 @@ app.get('/level/:level', (req, res) => {
     const level = req.params.level;
     const levelData = fs.readFileSync(`./resources/leveldata/level-${level}.json`, 'utf-8');
     res.render('level', {
-        title: 'Nivå ' + level,
+        title: `Level ${level} | Learn Responsive Images`,
         level,
         levelData: JSON.parse(levelData)
+    });
+});
+
+app.get('/happy-birthday', (req, res) => {
+    res.render('happy-birthday', {
+        title: 'Happy Birthday | Learn Responsive Images'
     });
 })
 
