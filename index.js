@@ -2,11 +2,76 @@ const path = require('path');
 const fs = require('fs');
 const express = require('express')
 const app = express()
+const session = require('express-session')
+require('dotenv').config();
+const Sequelize = require('sequelize');
+const sequelize = new Sequelize('learnresponsiveimages_dev', 'root', 'root', {
+    host: 'localhost',
+    dialect: 'mysql',
+    dialectOptions: {
+        socketPath: '/Applications/MAMP/tmp/mysql/mysql.sock'
+    }
+})
+sequelize.authenticate();
+
+const User = sequelize.define('user', {
+    uid: Sequelize.INTEGER,
+    username: Sequelize.STRING
+});
+User.sync();
+
+
+const passport = require('passport')
+const TwitterStrategy = require('passport-twitter').Strategy;
+
+app.use(session({
+    secret: 'learn responsive images',
+    resave: false,
+    saveUninitialized: true
+}));
+
+passport.use(new TwitterStrategy({
+        consumerKey: process.env.TWITTER_KEY,
+        consumerSecret: process.env.TWITTER_SECRET,
+        callbackURL: 'http://localhost:3000/auth/twitter/callback'
+    }, function (token, tokenSecret, profile, done) {
+        User.findOrCreate({
+            where: {
+                uid: profile.id
+            }
+        }).spread((user, created) => {
+            console.log('spread');
+            return done(null, user);
+        })
+    }
+));
+passport.serializeUser((user, done) => {
+    done(null, user.id);
+});
+passport.deserializeUser((id, done) => {
+    User.findById(id).then((user) => done(null, user));
+});
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+
+app.get('/auth/twitter', passport.authenticate('twitter'));
+
+app.get('/auth/twitter/callback',
+    passport.authenticate('twitter', {
+        successRedirect: '/',
+        failureRedirect: '/login'
+    })
+);
+
+app.get('/login', (req, res) => res.send('fail'));
 
 app.set('view engine', 'pug')
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', function (req, res) {
+    console.log(req.isAuthenticated());
     const levelData = fs.readFileSync('./resources/leveldata/landingpage.json');
     res.render('landing-page', {
         title: 'Learn Responsive Images',
