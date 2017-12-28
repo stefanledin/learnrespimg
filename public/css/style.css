@@ -440,7 +440,7 @@ body {
   border-top: 10px solid #7ECBA1;
   background: url("/img/landscape.jpg") no-repeat bottom center #E7EED2;
   background-size: cover;
-  font-family: sans-serif;
+  font-family: monospace;
   color: #466551;
   line-height: 1; }
 
@@ -548,6 +548,25 @@ header {
 /**
  * Levels
  */
+.game-stats {
+  padding: .5rem 2rem;
+  background: rgba(70, 101, 81, 0.8);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+
+.game-stats__trophy-wrapper {
+  display: flex; }
+
+.game-stats__trophy {
+  padding: 0 .5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  .game-stats__trophy img {
+    width: 30px; }
+
 .level__description {
   width: 100%;
   line-height: 1.2; }

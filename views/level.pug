@@ -1,9 +1,27 @@
 extends master.pug
 
 block body
+    if user
+        section.section.wrapper
+            .game-stats
+                span Points: #{user.points}
+                .game-stats__trophy-wrapper
+                    .game-stats__trophy
+                        img(src="/img/yeti_cup_BnW.png")
+                        span Trophy name
+                    .game-stats__trophy    
+                        img(src="/img/yeti_cup_FH.png")
+                        span Trophy name
+                    .game-stats__trophy
+                        img(src="/img/yeti_cup_SM.png")
+                        span Trophy name
+                    .game-stats__trophy
+                        img(src="/img/yeti_cup_SMa.png")
+                        span Trophy name
     header
         .container
             h3.header-title Learn Responsive Images
+
     section.section-wrapper
         .container.container--bg
             .container__inner

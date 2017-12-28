@@ -2,6 +2,7 @@
     "level": "3",
     "description": "Most of SmallFoot's friends will visit the website on their phones, but some of his friends is really hard core gamers. They have desktop computers with ultra wide monitors and SmallFoot doesn't want the site to look strange on them.\nWhat if there was a way to load the small image on small screens, and the large image on large screens...?",
     "todo": "Add a srcset attribute containing the link to the large image.",
+    "points": 2,
     "assets": [
         "birthday_small.jpg",
         "birthday_large.jpg"

@@ -1,6 +1,9 @@
 import '../scss/app.scss';
 
 import Vue from 'vue/dist/vue.esm';
+import axios from 'axios';
+
+window.axios = axios;
 
 const answers = {
     methods: {
@@ -209,6 +212,13 @@ if (window.levelData) {
                 this.correctAnswer = this['level'+this.level]();           
                 this.wrongAnswer = !this.correctAnswer;
                 document.body.classList.add('has-modal');
+                if (this.correctAnswer) {
+                    axios.post('/finished-level', {
+                        level: this.level,
+                        points: 1,
+                        trophy: this.trophy || null
+                    });
+                }
             },
             tryAgain() {
                 document.body.classList.remove('has-modal');

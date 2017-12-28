@@ -16,5 +16,9 @@ block body
                         p His 13:th birthday is coming up and he's planning a big party for his friends.<br>Since {name} is learning how to build websites on his spare time, he thinks it would be a fun project to create a <a href="https://en.wikipedia.org/wiki/RSVP_(invitations)" target="_blank">RSVP</a> website for the party.
                         p One challenge he will face is to keep the weight of the site down. You see, the connection speed can be a bit slow this far out in the forest.<br>{Name} fears that his friends will leave the website before it's fully loaded and miss his birtyday party.
                         p Can you help {name} optimizing the site?
-                        a(href="/level/1").h3.button I can!
-                        //- p Images is by far the heaviest resource on websites, so he's going to need your help with optimizing them for both smartphones and desktop computers.
+                        if user
+                            a(href=currentlevel).h3.button Continue
+                        else 
+                            a(href="/auth/twitter").h3.button Log in with Twitter and begin
+                            br
+                            a(href="/level/1").button I'm fine beeing anonymous

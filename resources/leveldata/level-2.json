@@ -2,6 +2,7 @@
     "level": "2",
     "description": "The header image looks very nice, but it's very big. SmallFoot is worried that the website will load slow on his friends phones. After all, the reception is a bit slow here in the forest! It would be a shame if his friends left the site without signing up for the party...",
     "todo": "Change to the small image!",
+    "points": 1,
     "assets": [
         "birthday_small.jpg",
         "birthday.jpg"

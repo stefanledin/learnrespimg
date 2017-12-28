@@ -2,6 +2,7 @@
     "level": "1",
     "description": "SmallFoot finds a photo from last year's birthday party. He wants to use it as a large header image on the website. That should remind his friends about how fun it was last year!",
     "todo": "Help SmallFoot add the image to the header!",
+    "points": 1,
     "assets": ["birthday.jpg"],
     "starterMarkup": "<img>",
     "messages": {
