@@ -17,8 +17,8 @@ block body
                         p One challenge he will face is to keep the weight of the site down. You see, the connection speed can be a bit slow this far out in the forest.<br>{Name} fears that his friends will leave the website before it's fully loaded and miss his birtyday party.
                         p Can you help {name} optimizing the site?
                         if user
-                            a(href=currentlevel).h3.button Continue
+                            a(href='/level/'+currentLevel).h3.button Continue
                         else 
-                            a(href="/auth/twitter").h3.button Log in with Twitter and begin
+                            a(href="/auth/twitter").p.button Log in with Twitter
                             br
                             a(href="/level/1").button I'm fine beeing anonymous

@@ -70,7 +70,7 @@ app.get('/intro', function (req, res) {
     res.render('intro', {
         title: 'Intro – Learn Responsive Images',
         user: req.user,
-        currentLevel: req.user.currentLevel() || 1
+        currentLevel: req.user ? req.user.currentLevel() : 1
     })
 });
 

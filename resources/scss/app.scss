@@ -24,6 +24,9 @@ $light-green: #7ECBA1;
     background: $light-green;
 }
 
+.text-white {
+    color: white;
+}
 .text-grey {
     color: $grey;
 }
@@ -120,7 +123,7 @@ a, a:visited {
  */
 
 header {
-    margin: .5rem 0;
+    margin: 1rem 0 .5rem 0;
 }
 .header-title {
     margin: 0;
@@ -132,6 +135,9 @@ header {
     width: 95%;
     max-width: 900px;
     line-height: normal;
+    &.container--wide {
+        max-width: none;
+    }
     &.container--bg {
         background: transparentize($grey, .2);
     }
@@ -184,28 +190,64 @@ header {
     }
 }
 
+
 /**
+ *
+ * Topbar
+ *
+ */
+
+.top-bar {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding: .5rem 0;
+}
+.account a {
+    color: white;
+    text-decoration: none;
+}
+
+.trophies {
+    padding: .5rem 0 1rem 0;
+    border-bottom: 3px solid $dark-green;
+    background: $green;
+}
+
+/**
+ * 
  * Levels
+ * 
  */
 
 .game-stats {
-    padding: .5rem 2rem;
+    //padding: .5rem 2rem;
+    //padding: .5rem 0;
     background: transparentize($dark-green, .2);
-    color: white;
-    display: flex;
+    /*display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: center;*/
 }
-.game-stats__trophy-wrapper {
+.game-stats__icons-wrapper {
     display: flex;
+    flex-flow: wrap;
 }
-.game-stats__trophy {
+.game-stats__icon {
     padding: 0 .5rem;
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
+    color: white;
     img {
         width: 30px;
+    }
+}
+.game-stats__icon--large {
+    //flex-grow: 1;
+    width: 33.3%;
+    img {
+        width: 300px;
     }
 }
 

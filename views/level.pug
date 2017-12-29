@@ -2,22 +2,35 @@ extends master.pug
 
 block body
     if user
-        section.section.wrapper
-            .game-stats
-                span Points: #{user.points}
-                .game-stats__trophy-wrapper
-                    .game-stats__trophy
-                        img(src="/img/yeti_cup_BnW.png")
-                        span Trophy name
-                    .game-stats__trophy    
-                        img(src="/img/yeti_cup_FH.png")
-                        span Trophy name
-                    .game-stats__trophy
-                        img(src="/img/yeti_cup_SM.png")
-                        span Trophy name
-                    .game-stats__trophy
-                        img(src="/img/yeti_cup_SMa.png")
-                        span Trophy name
+        section.section.wrapper.bg-dark-green
+            .container.container--wide
+                .top-bar
+                    .game-stats
+                        .game-stats__icons-wrapper
+                            .game-stats__icon
+                                img(src="/img/coin_02.png")
+                                span #{user.points}/15
+                            .game-stats__icon
+                                img(src="/img/yeti_cup_BnW.png")
+                                span My trophies
+                    .account
+                        a(href="/logout") Log out
+            .trophies
+                .container
+                    h3.text-grey Trophies
+                    .game-stats__icons-wrapper
+                        .game-stats__icon.game-stats__icon--large
+                            img(src="/img/yeti_cup_FH.png")
+                            span Srcset Master
+                        .game-stats__icon.game-stats__icon--large
+                            img(src="/img/yeti_cup_FH.png")
+                            span Srcset Master
+                        .game-stats__icon.game-stats__icon--large
+                            img(src="/img/yeti_cup_FH.png")
+                            span Srcset Master
+                        .game-stats__icon.game-stats__icon--large
+                            img(src="/img/yeti_cup_FH.png")
+                            span Srcset Master
     header
         .container
             h3.header-title Learn Responsive Images
