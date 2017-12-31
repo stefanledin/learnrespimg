@@ -1,7 +1,8 @@
 {
     "level": "6",
-    "description": "As soon as the screen gets wider than 375 pixels, the large image is loaded by the browser. SmallFoot doesn't mind if the image doesn't fill the entire screen all the time. He thinks it's more important that the website loads as fast as possible! He reads about the sizes attribute, which can be used to tell the browser how wide the image should be at different screen sizes.",
+    "description": "As soon as the screen gets wider than 375 pixels, the large image is loaded by the browser. Sam doesn't mind if the image doesn't fill the entire screen all the time. He thinks it's more important that the website loads as fast as possible! He reads about the sizes attribute, which can be used to tell the browser how wide the image should be at different screen sizes.",
     "todo": "Add a sizes attribute to the <img>. The value should be the width (in px) of the smallest image.",
+    "points": 2,
     "assets": [
         "birthday_small.jpg (375 pixels wide)",
         "birthday_large.jpg (1024 pixels wide)"
@@ -10,11 +11,11 @@
     "messages": {
         "correct": {
             "headline": "Good!",
-            "text": "You've helped SmallFoot with yet another attribute. Now, he needs help controlling at which screen size the large image should be loaded..."
+            "text": "You've helped Sam with yet another attribute. Now, he needs help controlling at which screen size the large image should be loaded..."
         },
         "wrong": {
             "headline": "sizes matters!",
-            "text": "Where's the sizes attribute? Come on, be a good friend and help SmallFoot now!"
+            "text": "Where's the sizes attribute? Come on, be a good friend and help Sam now!"
         }
     },
     "nextURL": "/level/7"

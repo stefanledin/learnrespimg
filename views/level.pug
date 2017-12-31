@@ -1,36 +1,8 @@
 extends master.pug
 
 block body
-    if user
-        section.section.wrapper.bg-dark-green
-            .container.container--wide
-                .top-bar
-                    .game-stats
-                        .game-stats__icons-wrapper
-                            .game-stats__icon
-                                img(src="/img/coin_02.png")
-                                span #{user.points}/15
-                            .game-stats__icon
-                                img(src="/img/yeti_cup_BnW.png")
-                                span My trophies
-                    .account
-                        a(href="/logout") Log out
-            .trophies
-                .container
-                    h3.text-grey Trophies
-                    .game-stats__icons-wrapper
-                        .game-stats__icon.game-stats__icon--large
-                            img(src="/img/yeti_cup_FH.png")
-                            span Srcset Master
-                        .game-stats__icon.game-stats__icon--large
-                            img(src="/img/yeti_cup_FH.png")
-                            span Srcset Master
-                        .game-stats__icon.game-stats__icon--large
-                            img(src="/img/yeti_cup_FH.png")
-                            span Srcset Master
-                        .game-stats__icon.game-stats__icon--large
-                            img(src="/img/yeti_cup_FH.png")
-                            span Srcset Master
+    include topbar.pug
+
     header
         .container
             h3.header-title Learn Responsive Images
@@ -73,7 +45,11 @@ block body
                                 .inner
                                     h2.modal__title #{levelData.messages.correct.headline}
                                     p.center #{levelData.messages.correct.text}
-                                    a.button.center-block(href=levelData.nextURL) Continue to the next level!
+                                    if levelData.trophy
+                                        h3.center You've earned a trophy!
+                                        img(src="/img/trophies/"+levelData.trophy+"_1x.png", srcset="/img/trophies/"+levelData.trophy+"_1x.png 300w, /img/trophies/"+levelData.trophy+"_2x.png 600w", sizes="300px" class="center-block")
+                                    p.center
+                                        a.button.center-block(href=levelData.nextURL) Continue!
 
                     .modal__overlay(v-show="wrongAnswer", style="display: none;")
                         .modal

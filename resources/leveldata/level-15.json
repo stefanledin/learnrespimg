@@ -1,8 +1,8 @@
 {
     "level": "15",
-    "description": "The last thing SmallFoot wants to add is three columns with one image in each. One is a picture of the smorgasbord from last year, one on the snacks and one on the drinks. But since SmallFoot won't switch from one to three columns until the screen width is at least 600 pixels, the images will be smaller on bigger screens. The columns, and their images, will never be wider than 320px. This means that the images can be up to 599px on screens smaller than 600px, but never larger than 320px after that. Can you help SmallFoot one last time?",
+    "description": "The last thing Sam wants to add is three columns with one image in each. One is a picture of the smorgasbord from last year, one on the snacks and one on the drinks. But since Sam won't switch from one to three columns until the screen width is at least 600 pixels, the images will be smaller on bigger screens. The columns, and their images, will never be wider than 320px. This means that the images can be up to 599px on screens smaller than 600px, but never larger than 320px after that. Can you help Sam one last time?",
     "todo": "coffee_small.jpg should be used on screens smaller than 320px. Use coffee_medium between 320 and 600px. On screens that is at least 600px, use coffee_small.jpg again. (Use min-width in the sizes attribute)",
-    "example": "",
+    "trophy": "best_friend",    
     "assets": [
         "coffee_small.jpg (320 pixels wide)",
         "coffee_small_2x.jpg (640 pixels wide)",
@@ -13,12 +13,12 @@
     "messages": {
         "correct": {
             "headline": "We did it!",
-            "text": "SmallFoot thinks this was the hardest problem he faced durning the development of this site. But thank's to you, the site is finished in time!"
+            "text": "Sam thinks this was the hardest problem he faced durning the development of this site. But thank's to you, the site is finished in time!"
         },
         "wrong": {
             "headline": "When you got this right, the site is finished!",
-            "text": "SmallFoot thinks this is very hard to, but you need to keep on trying! Without your help, the site may not be finished in time..."
+            "text": "Sam thinks this is very hard to, but you need to keep on trying! Without your help, the site may not be finished in time..."
         }
     },
-    "nextURL": "/the-end"
+    "nextURL": "/happy-birthday"
 }

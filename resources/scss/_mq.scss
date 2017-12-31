@@ -29,6 +29,12 @@
      *
      */
     
+    .col3 {
+        width: susy-span(4 of 12);
+    }
+    .col4 {
+        width: susy-span(3 of 12);
+    }
     .col6 {
         width: susy-span(6 of 12);
     }

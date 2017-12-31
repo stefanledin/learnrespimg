@@ -1,7 +1,9 @@
 {
     "level": "11",
-    "description": "SmallFoot discovers that he now has the same problem as when he was tinkering with the header image: the browser always loads the first image in the srcset! Can you help him remember how it should be solved?",
+    "description": "Sam discovers that he now has the same problem as when he was tinkering with the header image: the browser always loads the first image in the srcset! Can you help him remember how it should be solved?",
     "todo": "Add an attribute that tells the browser which size the image will have.",
+    "points": 2,
+    "trophy": "sizes_matters",
     "assets": [
         "balloon.png (150 pixels wide)",
         "balloon_2x.png (300 pixels wide)"

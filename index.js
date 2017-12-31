@@ -78,9 +78,9 @@ app.get('/level/:level', async (req, res) => {
     const level = req.params.level;
     if (req.user) {
         const user = await User.findById(req.user.id);
-        const nextLevel = user.currentLevel() + 1;
+        const nextLevel = user.currentLevel();
         if (nextLevel.toString() !== level) {
-            res.redirect('/level/'+nextLevel);
+            //res.redirect('/level/'+nextLevel);
         }
     }
     const levelData = fs.readFileSync(`./resources/leveldata/level-${level}.json`, 'utf-8');
@@ -94,7 +94,8 @@ app.get('/level/:level', async (req, res) => {
 
 app.get('/happy-birthday', (req, res) => {
     res.render('happy-birthday', {
-        title: 'Happy Birthday | Learn Responsive Images'
+        title: 'Happy Birthday | Learn Responsive Images',
+        user: req.user
     });
 })
 
@@ -103,7 +104,6 @@ app.post('/finished-level', async (req, res) => {
     const user = await User.findById(req.user.id);
     if (!user.finishedLevels.includes(req.body.level)) {
         user.finishedLevels.push(req.body.level);
-        user.points += req.body.points;
     }
     if (req.body.trophy) {
         user.trophies.push(req.body.trophy);

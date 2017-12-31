@@ -48,7 +48,7 @@ html, body {
 }
 
 body {
-    padding-bottom: 1rem;
+    padding-bottom: 5rem;
     border-top: 10px solid $light-green;
     background: url('/img/landscape.jpg') no-repeat bottom center $grey;
     background-size: cover;
@@ -155,11 +155,18 @@ header {
     overflow: hidden;
     float: none;
 }
+.col3 {
+    width: susy-span(6 of 12);
+    float: left;
+}
+.col4 {
+    width: susy-span(6 of 12);
+    float: left;
+}
 .col6 {
     width: susy-span(12 of 12);
     float: left;
 }
-
 .col12 {
     width: susy-span(12 of 12);
 }
@@ -206,12 +213,35 @@ header {
 .account a {
     color: white;
     text-decoration: none;
+    &:hover {
+        text-decoration: underline;
+    }
 }
 
+.js-open-trophy-shelf {
+    cursor: pointer;
+}
 .trophies {
     padding: .5rem 0 1rem 0;
+    position: relative;
     border-bottom: 3px solid $dark-green;
     background: $green;
+    display: none;
+    &.open {
+        display: block;
+    }
+}
+.trophies__header {
+    position: relative;
+}
+.trophies__close {
+    position: absolute;
+    top: 10px;
+    right: 0;
+    cursor: pointer;
+    path {
+        fill: $grey;
+    }
 }
 
 /**
@@ -224,13 +254,13 @@ header {
     //padding: .5rem 2rem;
     //padding: .5rem 0;
     background: transparentize($dark-green, .2);
-    /*display: flex;
+    display: flex;
     justify-content: space-between;
-    align-items: center;*/
+    align-items: center;
 }
 .game-stats__icons-wrapper {
     display: flex;
-    flex-flow: wrap;
+    justify-content: space-between;
 }
 .game-stats__icon {
     padding: 0 .5rem;
@@ -244,8 +274,7 @@ header {
     }
 }
 .game-stats__icon--large {
-    //flex-grow: 1;
-    width: 33.3%;
+    padding: 0; 
     img {
         width: 300px;
     }
@@ -336,8 +365,14 @@ body.has-modal {
 /**
  * Helpers
  */
+.left {
+    text-align: left;
+} 
 .center {
     text-align: center;
+}
+.right {
+    text-align: right;
 }
 
 .center-block {

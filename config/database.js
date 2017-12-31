@@ -14,12 +14,10 @@ let userSchema = new mongoose.Schema({
         type: Number,
         default: 1
     },
-    points: {
-        type: Number,
-        default: 0
-    },
     finishedLevels: Array,
     trophies: Array
+}, {
+    usePushEach: true
 });
 
 userSchema.methods.currentLevel = function () {

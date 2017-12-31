@@ -5,6 +5,15 @@ import axios from 'axios';
 
 window.axios = axios;
 
+const trophyIcon = document.querySelector('.js-open-trophy-shelf');
+const toggleTrophyShelf = function (event) {
+    document.querySelector('.trophies').classList.toggle('open');
+}
+if (trophyIcon) {
+    trophyIcon.addEventListener('click', toggleTrophyShelf);
+    document.querySelector('.trophies__close').addEventListener('click', toggleTrophyShelf);
+}
+
 const answers = {
     methods: {
         level0() {
@@ -222,7 +231,6 @@ if (window.levelData) {
             },
             tryAgain() {
                 document.body.classList.remove('has-modal');
-                this.markup = this.starterMarkup;
                 this.correctAnswer = false;
                 this.wrongAnswer = false;
             }

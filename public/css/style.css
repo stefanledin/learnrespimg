@@ -439,7 +439,7 @@ html, body {
   min-height: 100%; }
 
 body {
-  padding-bottom: 1rem;
+  padding-bottom: 5rem;
   border-top: 10px solid #7ECBA1;
   background: url("/img/landscape.jpg") no-repeat bottom center #E7EED2;
   background-size: cover;
@@ -520,6 +520,14 @@ header {
   overflow: hidden;
   float: none; }
 
+.col3 {
+  width: 49.15254%;
+  float: left; }
+
+.col4 {
+  width: 49.15254%;
+  float: left; }
+
 .col6 {
   width: 100%;
   float: left; }
@@ -564,11 +572,31 @@ header {
 .account a {
   color: white;
   text-decoration: none; }
+  .account a:hover {
+    text-decoration: underline; }
+
+.js-open-trophy-shelf {
+  cursor: pointer; }
 
 .trophies {
   padding: .5rem 0 1rem 0;
+  position: relative;
   border-bottom: 3px solid #466551;
-  background: #368C72; }
+  background: #368C72;
+  display: none; }
+  .trophies.open {
+    display: block; }
+
+.trophies__header {
+  position: relative; }
+
+.trophies__close {
+  position: absolute;
+  top: 10px;
+  right: 0;
+  cursor: pointer; }
+  .trophies__close path {
+    fill: #E7EED2; }
 
 /**
  * 
@@ -577,13 +605,13 @@ header {
  */
 .game-stats {
   background: rgba(70, 101, 81, 0.8);
-  /*display: flex;
-    justify-content: space-between;
-    align-items: center;*/ }
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
 
 .game-stats__icons-wrapper {
   display: flex;
-  flex-flow: wrap; }
+  justify-content: space-between; }
 
 .game-stats__icon {
   padding: 0 .5rem;
@@ -596,7 +624,7 @@ header {
     width: 30px; }
 
 .game-stats__icon--large {
-  width: 33.3%; }
+  padding: 0; }
   .game-stats__icon--large img {
     width: 300px; }
 
@@ -675,8 +703,14 @@ body.has-modal {
 /**
  * Helpers
  */
+.left {
+  text-align: left; }
+
 .center {
   text-align: center; }
+
+.right {
+  text-align: right; }
 
 .center-block {
   margin: 0 auto;
@@ -720,6 +754,10 @@ button, a.button, .button {
      * Layout
      *
      */
+  .col3 {
+    width: 32.20339%; }
+  .col4 {
+    width: 23.72881%; }
   .col6 {
     width: 49.15254%; }
   .sign-up h2 {

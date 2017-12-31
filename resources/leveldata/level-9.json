@@ -1,7 +1,8 @@
 {
     "level": "9",
-    "description": "SmallFoot is really starting to understand how the sizes attribute works and how it can be used. He decides that there should be a third, medium sized image for large phones and tablets. It should be used on screens that is at least 667 pixels wide. The large one on screens wider than 1024. (SmallFoot thinks mobile first, so use min-width again.)",
+    "description": "Sam is really starting to understand how the sizes attribute works and how it can be used. He decides that there should be a third, medium sized image for large phones and tablets. It should be used on screens that is at least 667 pixels wide. The large one on screens wider than 1024. (Sam thinks mobile first, so use min-width again.)",
     "todo": "Adjust the media queries so birthday_medium.jpg is loaded when (min-width: 667px). Use birthday_large.jpg when (min-width: 1024px)",
+    "points": 2,
     "assets": [
         "birthday_small.jpg (375 pixels wide)",
         "birthday_medium.jpg (768 pixels wide)",
@@ -11,7 +12,7 @@
     "messages": {
         "correct": {
             "headline": "Excellent!",
-            "text": "SmallFoot is very happy now when he's managed to optimize the header image for different screen sizes!"
+            "text": "Sam is very happy now when he has managed to optimize the header image for different screen sizes!"
         },
         "wrong": {
             "headline": "Not there yet...",

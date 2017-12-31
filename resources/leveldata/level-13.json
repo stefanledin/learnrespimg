@@ -1,6 +1,6 @@
 {
     "level": "13",
-    "description": "SmallFoot borrows his mothers phone, which has a retina screen but an old browser without SVG support. He thinks that's a weird edge case, but since he's currently learning about the <picture> element, he'd like to find a solution anyway. Can you help him add a retina version of cake.png?",
+    "description": "Sam borrows his mothers phone, which has a retina screen but an old browser without SVG support. He thinks that's a weird edge case, but since he's currently learning about the <picture> element, he'd like to find a solution anyway. Can you help him add a retina version of cake.png?",
     "todo": "Add another <source> tag for the two PNG files. Use x-descriptors instead of the image width in pixels.",
     "example": "\"image.jpg 1x, image_2x.jpg 2x\"",
     "assets": [
