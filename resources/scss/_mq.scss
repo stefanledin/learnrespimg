@@ -1,5 +1,16 @@
 @media (min-width: 768px) {
 
+    /**
+     * Globals
+     */
+    body {
+        background: url('/img/landscape_1440.jpg') no-repeat bottom center $grey;
+        background-size: cover;
+    }
+
+    /**
+     * Typografi
+     */
     h1, .h1 {
         font-size: 4rem;
         &.h1--title {
@@ -63,5 +74,16 @@
     }
     .level__details {
         width: susy-span(6 of 12);
+    }
+}
+
+@media (min-width: 1440px) {
+
+    /**
+     * Globals
+     */
+    body {
+        background: url('/img/landscape.jpg') no-repeat bottom center $grey;
+        background-size: cover;
     }
 }

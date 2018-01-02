@@ -441,7 +441,7 @@ html, body {
 body {
   padding-bottom: 5rem;
   border-top: 10px solid #7ECBA1;
-  background: url("/img/landscape.jpg") no-repeat bottom center #E7EED2;
+  background: url("/img/landscape_768.jpg") no-repeat bottom center #E7EED2;
   background-size: cover;
   font-family: monospace;
   color: #466551;
@@ -737,6 +737,15 @@ button, a.button, .button {
   overflow: hidden; }
 
 @media (min-width: 768px) {
+  /**
+     * Globals
+     */
+  body {
+    background: url("/img/landscape_1440.jpg") no-repeat bottom center #E7EED2;
+    background-size: cover; }
+  /**
+     * Typografi
+     */
   h1, .h1 {
     font-size: 4rem; }
     h1.h1--title, .h1.h1--title {
@@ -774,5 +783,13 @@ button, a.button, .button {
     font-size: 16px; }
   .level__details {
     width: 49.15254%; } }
+
+@media (min-width: 1440px) {
+  /**
+     * Globals
+     */
+  body {
+    background: url("/img/landscape.jpg") no-repeat bottom center #E7EED2;
+    background-size: cover; } }
 
 /*# sourceMappingURL=style.css.map*/
