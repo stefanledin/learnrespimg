@@ -58,13 +58,12 @@ passport.deserializeUser(async (id, done) => {
  * Routes
  */
 app.get('/', function (req, res) {
-    const levelData = fs.readFileSync('./resources/leveldata/landingpage.json');
-    res.render('landing-page', {
-        title: 'Learn Responsive Images',
-        levelData: JSON.parse(levelData),
-        user: req.user
+    res.render('intro', {
+        title: 'Intro – Learn Responsive Images',
+        user: req.user,
+        currentLevel: req.user ? req.user.currentLevel() : 1
     })
-})
+});
 
 app.get('/intro', function (req, res) {
     res.render('intro', {
