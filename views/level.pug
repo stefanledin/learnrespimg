@@ -45,7 +45,7 @@ block body
                                 .inner
                                     h2.modal__title #{levelData.messages.correct.headline}
                                     p.center #{levelData.messages.correct.text}
-                                    if levelData.trophy
+                                    if user && levelData.trophy
                                         h3.center You've earned a trophy!
                                         img(src="/img/trophies/"+levelData.trophy+"_1x.png", srcset="/img/trophies/"+levelData.trophy+"_1x.png 300w, /img/trophies/"+levelData.trophy+"_2x.png 600w", sizes="300px" class="center-block")
                                     p.center
