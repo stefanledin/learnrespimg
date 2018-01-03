@@ -23,7 +23,7 @@ let userSchema = new mongoose.Schema({
 userSchema.methods.currentLevel = function () {
     let currentLevel = 1;
     if (this.finishedLevels.length) {
-        currentLevel = this.finishedLevels[this.finishedLevels.length - 1];
+        currentLevel = this.finishedLevels.length + 1;
     }
     return parseFloat(currentLevel);
 };
