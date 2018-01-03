@@ -314,11 +314,13 @@ header {
 
 .level__editor-wrapper {
     display: flex;
+    flex-direction: column;
 }
 
 .level__editor {
     padding: 8px;
-    flex: 5;    
+    flex: 1;
+    //flex: 5;    
     font-family: monospace;
     font-size: 14px;
     border: none;
