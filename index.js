@@ -78,8 +78,8 @@ app.get('/level/:level', async (req, res) => {
     if (req.user) {
         const user = await User.findById(req.user.id);
         const nextLevel = user.currentLevel();
-        if (nextLevel.toString() !== level) {
-            //res.redirect('/level/'+nextLevel);
+        if (nextLevel < parseFloat(level)) {
+            return res.redirect('/level/'+nextLevel);
         }
     }
     const levelData = fs.readFileSync(`./resources/leveldata/level-${level}.json`, 'utf-8');
